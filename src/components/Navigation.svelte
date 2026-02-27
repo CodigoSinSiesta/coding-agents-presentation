@@ -1,0 +1,329 @@
+<script>
+  import { onMount } from 'svelte';
+  import gsap from 'gsap';
+  import { animateSlideEntrance, addButtonHoverAnimation } from '../utils/animations';
+
+  let currentSlide = 0;
+  let totalSlides = 11;
+  let slides = [];
+
+  const slideNames = [
+    'hero',
+    'landscape',
+    'how-they-work',
+    'system-prompt',
+    'agents-subagents',
+    'hallucinations',
+    'avoid-hallucinations',
+    'best-practices',
+    'context-management',
+    'real-demo',
+    'closing'
+  ];
+
+  onMount(() => {
+    // Get all slides
+    slides = Array.from(document.querySelectorAll('.swiper-slide'));
+
+    // Add swiper-slide-active class to first slide
+    if (slides.length > 0) {
+      slides[0].classList.add('swiper-slide-active');
+      animateSlideEntrance(slides[0]);
+    }
+
+    // Add hover animations to buttons
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach((btn) => {
+      addButtonHoverAnimation(btn);
+    });
+
+    // Handle hash navigation on load
+    const hash = window.location.hash.replace('#/', '');
+    const slideIndex = slideNames.indexOf(hash);
+    if (slideIndex !== -1 && slideIndex !== currentSlide) {
+      goToSlide(slideIndex);
+    }
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#/', '');
+      const slideIndex = slideNames.indexOf(hash);
+      if (slideIndex !== -1 && slideIndex !== currentSlide) {
+        goToSlide(slideIndex);
+      }
+    });
+
+    // Listen for keyboard events
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+  });
+
+  function updateHash(slideName) {
+    window.location.hash = `#/${slideName}`;
+  }
+
+  function goToSlide(index) {
+    if (index < 0 || index >= slides.length || index === currentSlide) return;
+
+    // Fade out current slide
+    const previousSlide = slides[currentSlide];
+    if (previousSlide) {
+      gsap.to(previousSlide, {
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power2.out',
+        onComplete: () => {
+          previousSlide.classList.remove('swiper-slide-active');
+        }
+      });
+    }
+
+    // Add active class to new slide
+    currentSlide = index;
+    slides[currentSlide]?.classList.add('swiper-slide-active');
+    animateSlideEntrance(slides[currentSlide]);
+
+    // Update hash
+    updateHash(slideNames[currentSlide]);
+  }
+
+  function nextSlide() {
+    goToSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentSlide - 1);
+  }
+</script>
+
+<div class="presentation-container">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <slot />
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Navigation Buttons -->
+    <button
+      class="swiper-button-prev nav-btn nav-btn-prev"
+      title="Diapositiva anterior"
+      on:click={prevSlide}
+    >
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+
+    <button
+      class="swiper-button-next nav-btn nav-btn-next"
+      title="Siguiente diapositiva"
+      on:click={nextSlide}
+    >
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </div>
+
+  <!-- Slide Counter -->
+  <div class="slide-counter">
+    <span class="counter-number">{currentSlide + 1}</span>
+    <span class="counter-separator">/</span>
+    <span class="counter-total">{totalSlides}</span>
+  </div>
+</div>
+
+<style>
+  .presentation-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-base-dark);
+    overflow: hidden;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    --swiper-theme-color: var(--color-electric);
+  }
+
+  :global(.swiper-wrapper) {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  :global(.swiper-slide) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start !important;
+    justify-content: center;
+    scroll-behavior: smooth;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease-out;
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+  :global(.swiper-slide::-webkit-scrollbar) {
+    width: 8px;
+  }
+
+  :global(.swiper-slide::-webkit-scrollbar-track) {
+    background: rgba(10, 22, 40, 0.3);
+    border-radius: 4px;
+  }
+
+  :global(.swiper-slide::-webkit-scrollbar-thumb) {
+    background: rgba(96, 165, 250, 0.5);
+    border-radius: 4px;
+  }
+
+  :global(.swiper-slide::-webkit-scrollbar-thumb:hover) {
+    background: rgba(96, 165, 250, 0.8);
+  }
+
+  :global(.swiper-slide-active) {
+    opacity: 1;
+    pointer-events: auto;
+    position: absolute !important;
+    visibility: visible;
+    overflow: hidden;
+  }
+
+  .nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    background: rgba(30, 58, 138, 0.6);
+    border: 2px solid var(--color-electric);
+    border-radius: var(--radius-md);
+    color: var(--color-neutral-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-btn:hover {
+    background: rgba(30, 58, 138, 0.9);
+    border-color: var(--color-accent-bright);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .nav-btn-prev {
+    left: var(--spacing-2xl);
+  }
+
+  .nav-btn-next {
+    right: var(--spacing-2xl);
+  }
+
+  :global(.swiper-pagination) {
+    bottom: var(--spacing-3xl) !important;
+    z-index: 100;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    width: 12px;
+    height: 12px;
+    background: rgba(96, 165, 250, 0.4);
+    opacity: 0.6;
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+  }
+
+  :global(.swiper-pagination-bullet:hover) {
+    background: var(--color-electric);
+    transform: scale(1.2);
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background: var(--color-accent-bright);
+    width: 32px;
+    border-radius: 6px;
+    opacity: 1;
+  }
+
+  .slide-counter {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-2xl);
+    z-index: 100;
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    color: var(--color-electric);
+    display: flex;
+    gap: var(--spacing-grid);
+    align-items: center;
+    background: rgba(30, 58, 138, 0.4);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    backdrop-filter: blur(8px);
+  }
+
+  .counter-separator {
+    color: var(--color-neutral-light);
+    opacity: 0.5;
+  }
+
+  .counter-total {
+    color: var(--color-neutral-light);
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+    }
+
+    .nav-btn-prev {
+      left: var(--spacing-lg);
+    }
+
+    .nav-btn-next {
+      right: var(--spacing-lg);
+    }
+
+    .slide-counter {
+      bottom: var(--spacing-lg);
+      right: var(--spacing-lg);
+      font-size: 1rem;
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-btn {
+      width: 36px;
+      height: 36px;
+    }
+
+    :global(.swiper-pagination) {
+      bottom: var(--spacing-xl) !important;
+    }
+
+    .slide-counter {
+      bottom: var(--spacing-md);
+      right: var(--spacing-md);
+      font-size: 0.9rem;
+    }
+  }
+</style>

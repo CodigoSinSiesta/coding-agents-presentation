@@ -1,0 +1,106 @@
+# Coding Agents Presentation
+
+Presentación sobre **Agentes de IA como Compañeros de Codificación** — herramientas, flujos de trabajo, buenas prácticas y cómo evitar alucinaciones.
+
+## Stack
+
+- **Framework**: Astro 4.16.19 (static site)
+- **Components**: Svelte 5.x
+- **Styling**: Tailwind CSS 4.x
+- **Animations**: GSAP 3.x
+- **Runtime**: pnpm + Node 25.x
+
+## Arquitectura de la Presentación
+
+```
+src/
+├── components/
+│   ├── Navigation.svelte       # Control de slides + keyboard nav
+│   └── slides/                 # 11 slides individuales
+│       ├── Slide01Hero.svelte
+│       ├── Slide02Landscape.svelte
+│       ├── Slide03HowTheyWork.svelte
+│       ├── Slide04SystemPrompt.svelte
+│       ├── Slide05AgentsSubagents.svelte
+│       ├── Slide06Hallucinations.svelte
+│       ├── Slide07AvoidHallucinations.svelte
+│       ├── Slide08BestPractices.svelte
+│       ├── Slide09ContextManagement.svelte
+│       ├── Slide10RealDemo.svelte
+│       └── Slide11Closing.svelte
+├── layouts/
+│   └── PresentationLayout.astro
+├── styles/
+│   ├── global.css              # Design system tokens + reset
+│   └── animations.css          # GSAP animation classes
+├── utils/
+│   └── animations.ts           # GSAP helpers
+└── pages/
+    └── index.astro             # Entry point
+```
+
+## Design System
+
+### Colors (CSS Custom Properties)
+```css
+--color-base-dark: #0A1628      /* Fondo oscuro */
+--color-primary-cobalt: #1E3A8A  /* Azul cobalto */
+--color-accent-bright: #3B82F6   /* Azul brillante */
+--color-electric: #60A5FA        /* Azul eléctrico */
+--color-neutral-light: #FAF9F6   /* Blanco hueso */
+```
+
+### Typography
+- **Display**: Space Grotesk (títulos principales)
+- **Subheader**: Bricolage Grotesque (subtítulos)
+- **Body**: IBM Plex Sans (cuerpo)
+- **Mono**: JetBrains Mono (código)
+
+## Slide Structure Pattern
+
+Cada slide sigue este patrón:
+```svelte
+<div class="swiper-slide">
+  <div class="slide-content">
+    <!-- header eyebrow + title + subtitle -->
+    <!-- main content grid/layout -->
+  </div>
+</div>
+```
+
+El sistema de navegación se basa en CSS (opacity + visibility) + GSAP para las transiciones. NO usar Swiper JS.
+
+## Navegación
+
+- **Teclado**: `←` / `→` para navegar entre slides
+- **Botones**: prev/next en los laterales
+- **Hash URLs**: `#/slide-name` para enlazar directamente a un slide
+- **Contador**: muestra "N/11" en la esquina inferior derecha
+
+## Slide Names (para hash navigation)
+
+```
+hero, landscape, how-they-work, system-prompt, agents-subagents,
+hallucinations, avoid-hallucinations, best-practices, 
+context-management, real-demo, closing
+```
+
+## Dev Commands
+
+```bash
+pnpm dev     # Inicia en http://localhost:4323
+pnpm build   # Build para producción
+pnpm preview # Preview del build
+```
+
+## Deploy
+
+GitHub Pages en: `https://codigosinsiesta.github.io/coding-agents-presentation`
+
+Base configurada en `astro.config.mjs`: `/coding-agents-presentation`
+
+## Notas Importantes
+
+- **NO usar `lucide-svelte`** para iconos en los slides — usar inline SVGs en su lugar. La versión instalada tiene un bug de resolución de módulos con Vite.
+- **Svelte 5 syntax**: usar `$state()`, `$effect()`, `onclick` (sin `on:click`) para código nuevo. Los slides existentes usan sintaxis de compatibilidad.
+- **Tailwind 4**: no usar `tailwind.config.js` para temas — usar CSS custom properties directamente en `global.css`.

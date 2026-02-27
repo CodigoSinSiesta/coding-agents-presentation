@@ -1,0 +1,31 @@
+---
+import PresentationLayout from '../layouts/PresentationLayout.astro';
+import Navigation from '../components/Navigation.svelte';
+import Slide01Hero from '../components/slides/Slide01Hero.svelte';
+import Slide02Landscape from '../components/slides/Slide02Landscape.svelte';
+import Slide03HowTheyWork from '../components/slides/Slide03HowTheyWork.svelte';
+import Slide04SystemPrompt from '../components/slides/Slide04SystemPrompt.svelte';
+import Slide05AgentsSubagents from '../components/slides/Slide05AgentsSubagents.svelte';
+import Slide06Hallucinations from '../components/slides/Slide06Hallucinations.svelte';
+import Slide07AvoidHallucinations from '../components/slides/Slide07AvoidHallucinations.svelte';
+import Slide08BestPractices from '../components/slides/Slide08BestPractices.svelte';
+import Slide09ContextManagement from '../components/slides/Slide09ContextManagement.svelte';
+import Slide10RealDemo from '../components/slides/Slide10RealDemo.svelte';
+import Slide11Closing from '../components/slides/Slide11Closing.svelte';
+---
+
+<PresentationLayout title="Agentes como Compañeros de Codificación">
+  <Navigation client:load>
+    <Slide01Hero />
+    <Slide02Landscape client:load />
+    <Slide03HowTheyWork client:load />
+    <Slide04SystemPrompt client:load />
+    <Slide05AgentsSubagents client:load />
+    <Slide06Hallucinations client:load />
+    <Slide07AvoidHallucinations client:load />
+    <Slide08BestPractices client:load />
+    <Slide09ContextManagement client:load />
+    <Slide10RealDemo client:load />
+    <Slide11Closing client:load />
+  </Navigation>
+</PresentationLayout>
