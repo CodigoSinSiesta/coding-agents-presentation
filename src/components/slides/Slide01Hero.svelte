@@ -28,10 +28,10 @@
 
     <div class="tools-row">
       <span class="tool-badge">Cursor</span>
-      <span class="tool-badge">Windsurf</span>
       <span class="tool-badge">Copilot</span>
-      <span class="tool-badge">OpenCode</span>
-      <span class="tool-badge highlight-badge">Claude Code</span>
+      <span class="tool-badge">Antigravity</span>
+      <span class="tool-badge">Claude Code</span>
+      <span class="tool-badge highlight-badge">OpenCode</span>
     </div>
 
     <div class="author-card card-glass">

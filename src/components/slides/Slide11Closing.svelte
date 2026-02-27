@@ -7,8 +7,9 @@
   const resources = [
     { label: 'Claude Code', url: 'claude.ai/code', icon: '🤖', desc: 'CLI oficial de Anthropic' },
     { label: 'Cursor', url: 'cursor.com', icon: '⚡', desc: 'IDE con agente nativo' },
-    { label: 'Windsurf', url: 'codeium.com/windsurf', icon: '🌊', desc: 'IDE con Cascade' },
-    { label: 'OpenCode', url: 'github.com/sst/opencode', icon: '🖥️', desc: 'CLI open source' },
+    { label: 'Antigravity', url: 'antigravity.so', icon: '🚀', desc: 'Agentes en la nube' },
+    { label: 'OpenCode', url: 'github.com/sst/opencode', icon: '🖥️', desc: 'CLI open source', featured: true },
+    { label: 'Codex', url: 'github.com/openai/codex', icon: '🧬', desc: 'CLI de OpenAI' },
   ];
 
   const takeaways = [
@@ -53,13 +54,17 @@
           <h3 class="col-title">Recursos</h3>
           <div class="resources-list">
             {#each resources as res}
-              <div class="resource-item">
+              <div class="resource-item" class:featured={res.featured}>
                 <span class="res-icon">{res.icon}</span>
                 <div class="res-body">
                   <span class="res-label">{res.label}</span>
                   <span class="res-url">{res.url}</span>
                 </div>
-                <span class="res-desc">{res.desc}</span>
+                {#if res.featured}
+                  <span class="featured-badge">★ Mi favorito</span>
+                {:else}
+                  <span class="res-desc">{res.desc}</span>
+                {/if}
               </div>
             {/each}
           </div>
@@ -71,8 +76,6 @@
             <span class="author-name">Alejandro de la Fuente</span>
             <div class="author-links">
               <span class="author-link">🌐 tellmealex.dev</span>
-              <span class="author-link">📺 YouTube: Código sin Siesta</span>
-              <span class="author-link">🐦 @alexdevbytes</span>
             </div>
           </div>
         </div>
@@ -80,6 +83,9 @@
         <div class="final-quote">
           <span class="quote-icon">💬</span>
           <p>"La IA no te va a sustituir.<br />Te va a sustituir alguien que sabe usar la IA mejor que tú."</p>
+        </div>
+        <div class="branding">
+          Hecho con ❤️ por Código Sin Siesta
         </div>
       </div>
     </div>
@@ -277,6 +283,24 @@
     font-family: var(--font-mono);
   }
 
+  /* Featured resource */
+  .resource-item.featured {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(96, 165, 250, 0.3);
+    box-shadow: 0 0 12px rgba(96, 165, 250, 0.15);
+  }
+
+  .featured-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-accent-bright);
+    background: rgba(59, 130, 246, 0.2);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+  }
+
   /* Author */
   .author-final {
     display: flex;
@@ -346,6 +370,16 @@
     line-height: 1.65;
     margin-bottom: 0;
     font-style: italic;
+  }
+
+  /* Branding */
+  .branding {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-electric);
+    opacity: 0.6;
+    padding-top: var(--spacing-sm);
   }
 
   /* Orbs */

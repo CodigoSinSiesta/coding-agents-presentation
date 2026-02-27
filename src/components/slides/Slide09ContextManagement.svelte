@@ -18,12 +18,6 @@
       content: 'Instrucciones de código, frameworks a usar, patrones prohibidos, convenciones del equipo.',
     },
     {
-      file: '.windsurfrules',
-      tool: 'Windsurf',
-      color: '#10b981',
-      content: 'Similar a .cursorrules. Define el comportamiento del agente Cascade para tu proyecto.',
-    },
-    {
       file: 'copilot-instructions.md',
       tool: 'GitHub Copilot',
       color: '#6d28d9',

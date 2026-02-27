@@ -24,13 +24,13 @@
       badge: 'Popular',
     },
     {
-      name: 'Windsurf',
+      name: 'Antigravity',
       category: 'IDE Propio',
-      desc: 'IDE de Codeium. Cascade: agente que entiende el flujo completo del proyecto.',
-      strength: 'Cascade Flow',
-      color: '#10b981',
-      icon: '🌊',
-      badge: 'Codeium',
+      desc: 'IDE de Google con Gemini integrado. Surge de la adquisición de Windsurf.',
+      strength: 'Gemini nativo',
+      color: '#ea4335',
+      icon: '🚀',
+      badge: 'Google',
     },
     {
       name: 'OpenCode',
@@ -40,6 +40,7 @@
       color: '#f59e0b',
       icon: '🖥️',
       badge: 'OSS',
+      featured: true,
     },
     {
       name: 'Claude Code',
@@ -49,7 +50,15 @@
       color: '#3B82F6',
       icon: '🤖',
       badge: 'Anthropic',
-      featured: true,
+    },
+    {
+      name: 'Codex',
+      category: 'CLI / Terminal',
+      desc: 'CLI de OpenAI. Open source, construido en Rust. Similar a Claude Code.',
+      strength: 'Open Source',
+      color: '#10a37f',
+      icon: '💻',
+      badge: 'OpenAI',
     },
   ];
 </script>
@@ -151,7 +160,7 @@
   /* Tools grid */
   .tools-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
   }
 
@@ -174,7 +183,7 @@
   }
 
   .tool-card.featured::before {
-    content: '★ Usando ahora';
+    content: '★ Mi favorito';
     position: absolute;
     top: -12px;
     left: 50%;
