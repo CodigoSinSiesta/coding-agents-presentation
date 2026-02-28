@@ -124,9 +124,6 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
-    overflow-y: auto;
-    max-height: 100vh;
-    -webkit-overflow-scrolling: touch;
   }
 
   .slide-header { text-align: center; }
@@ -348,6 +345,9 @@
     .slide-content {
       padding: var(--spacing-lg) var(--spacing-md);
       gap: var(--spacing-lg);
+      overflow-y: auto;
+      max-height: 100vh;
+      -webkit-overflow-scrolling: touch;
     }
 
     .title {
