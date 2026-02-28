@@ -6,6 +6,7 @@
   let currentSlide = 0;
   let totalSlides = 11;
   let slides = [];
+  let menuOpen = false;
 
   const slideNames = [
     'hero',
@@ -20,6 +21,20 @@
     'real-demo',
     'closing'
   ];
+
+  const slideTitles = {
+    'hero': 'Inicio',
+    'landscape': 'Panorama',
+    'how-they-work': 'Cómo funcionan',
+    'system-prompt': 'System Prompt',
+    'agents-subagents': 'Agentes y Subagentes',
+    'hallucinations': 'Alucinaciones',
+    'avoid-hallucinations': 'Evitar Alucinaciones',
+    'best-practices': 'Buenas Prácticas',
+    'context-management': 'Gestión de Contexto',
+    'real-demo': 'Demo Real',
+    'closing': 'Cierre'
+  };
 
   onMount(() => {
     // Get all slides
@@ -59,6 +74,8 @@
         nextSlide();
       } else if (e.key === 'ArrowLeft') {
         prevSlide();
+      } else if (e.key === 'Escape' && menuOpen) {
+        menuOpen = false;
       }
     });
   });
@@ -69,6 +86,11 @@
 
   function goToSlide(index) {
     if (index < 0 || index >= slides.length || index === currentSlide) return;
+
+    // Close menu if open
+    if (menuOpen) {
+      menuOpen = false;
+    }
 
     // Fade out current slide
     const previousSlide = slides[currentSlide];
@@ -90,6 +112,11 @@
 
     // Update hash
     updateHash(slideNames[currentSlide]);
+  }
+
+  function goToSlideFromMenu(index) {
+    menuOpen = false;
+    goToSlide(index);
   }
 
   function nextSlide() {
@@ -133,6 +160,52 @@
     <span class="counter-number">{currentSlide + 1}</span>
     <span class="counter-separator">/</span>
     <span class="counter-total">{totalSlides}</span>
+  </div>
+
+  <!-- Hamburger Menu Button (mobile only) -->
+  <button
+    class="hamburger-btn"
+    class:open={menuOpen}
+    title="Menú de navegación"
+    on:click={() => menuOpen = !menuOpen}
+  >
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+
+  <!-- Slide Drawer Overlay -->
+  {#if menuOpen}
+    <div class="drawer-overlay" on:click={() => menuOpen = false} on:keydown|preventDefault></div>
+  {/if}
+
+  <!-- Slide Drawer -->
+  <div class="slide-drawer" class:open={menuOpen}>
+    <div class="drawer-header">
+      <span class="drawer-title">Navegación</span>
+      <button class="drawer-close" title="Cerrar menú" on:click={() => menuOpen = false}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <ul class="drawer-list">
+        {#each slideNames as name, index}
+          <li>
+            <button
+              class="drawer-item"
+              class:active={index === currentSlide}
+              on:click={() => goToSlideFromMenu(index)}
+            >
+              <span class="item-number">{index + 1}</span>
+              <span class="item-title">{slideTitles[name]}</span>
+            </button>
+          </li>
+        {/each}
+      </ul>
+    </nav>
   </div>
 </div>
 
@@ -288,6 +361,185 @@
     opacity: 0.7;
   }
 
+  /* Hamburger Button - Mobile Only */
+  .hamburger-btn {
+    display: none;
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: var(--z-modal);
+    width: 48px;
+    height: 48px;
+    background: rgba(30, 58, 138, 0.6);
+    border: 2px solid var(--color-electric);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    transition: all var(--transition-base);
+    backdrop-filter: blur(8px);
+  }
+
+  .hamburger-btn:hover {
+    background: rgba(30, 58, 138, 0.9);
+    border-color: var(--color-accent-bright);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-neutral-light);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+    transform-origin: center;
+  }
+
+  .hamburger-btn.open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger-btn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .hamburger-btn.open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Drawer Overlay */
+  .drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 22, 40, 0.7);
+    z-index: var(--z-modal);
+    opacity: 1;
+    animation: fadeIn var(--transition-base) ease-out;
+  }
+
+  /* Slide Drawer */
+  .slide-drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(300px, 85vw);
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(30, 58, 138, 0.95) 0%, rgba(10, 22, 40, 0.98) 100%);
+    border-left: 2px solid var(--color-electric);
+    z-index: var(--z-popover);
+    transform: translateX(100%);
+    transition: transform var(--transition-base) cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    backdrop-filter: blur(12px);
+  }
+
+  .slide-drawer.open {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+  }
+
+  .drawer-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-neutral-light);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .drawer-close {
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 2px solid var(--color-electric);
+    border-radius: var(--radius-md);
+    color: var(--color-neutral-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+  }
+
+  .drawer-close:hover {
+    background: rgba(96, 165, 250, 0.2);
+    border-color: var(--color-accent-bright);
+  }
+
+  .drawer-nav {
+    padding: var(--spacing-md);
+  }
+
+  .drawer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .drawer-item {
+    width: 100%;
+    min-height: 56px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: all var(--transition-fast);
+    text-align: left;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .drawer-item:hover {
+    background: rgba(96, 165, 250, 0.15);
+  }
+
+  .drawer-item.active {
+    background: rgba(59, 130, 246, 0.25);
+    border-left: 4px solid var(--color-accent-bright);
+    box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.1);
+  }
+
+  .item-number {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-electric);
+    opacity: 0.7;
+    min-width: 28px;
+  }
+
+  .drawer-item.active .item-number {
+    color: var(--color-accent-bright);
+    opacity: 1;
+  }
+
+  .item-title {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-neutral-light);
+  }
+
+  .drawer-item.active .item-title {
+    font-weight: 600;
+    color: var(--color-neutral-light);
+  }
+
   @media (max-width: 768px) {
     .nav-btn {
       width: 40px;
@@ -307,6 +559,14 @@
       right: var(--spacing-lg);
       font-size: 1rem;
       padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .hamburger-btn {
+      display: flex;
+    }
+
+    .slide-drawer {
+      display: block;
     }
   }
 
