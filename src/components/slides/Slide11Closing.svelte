@@ -4,13 +4,7 @@
   let slideElement: HTMLElement;
   onMount(() => { animateSlideEntrance(slideElement); });
 
-  const resources = [
-    { label: 'Claude Code', url: 'claude.ai/code', icon: '🤖', desc: 'CLI oficial de Anthropic' },
-    { label: 'Cursor', url: 'cursor.com', icon: '⚡', desc: 'IDE con agente nativo' },
-    { label: 'Antigravity', url: 'antigravity.so', icon: '🚀', desc: 'Agentes en la nube' },
-    { label: 'OpenCode', url: 'github.com/sst/opencode', icon: '🖥️', desc: 'CLI open source', featured: true },
-    { label: 'Codex', url: 'github.com/openai/codex', icon: '🧬', desc: 'CLI de OpenAI' },
-  ];
+
 
   const takeaways = [
     'El agente es Jarvis, tú eres Tony Stark. Dirige.',
@@ -48,46 +42,29 @@
         </div>
       </div>
 
-      <!-- Resources + author -->
+      <!-- Quote + Author + Branding -->
       <div class="right-col">
-        <div class="resources card-glass">
-          <h3 class="col-title">Recursos</h3>
-          <div class="resources-list">
-            {#each resources as res}
-              <div class="resource-item" class:featured={res.featured}>
-                <span class="res-icon">{res.icon}</span>
-                <div class="res-body">
-                  <span class="res-label">{res.label}</span>
-                  <span class="res-url">{res.url}</span>
-                </div>
-                {#if res.featured}
-                  <span class="featured-badge">★ Mi favorito</span>
-                {:else}
-                  <span class="res-desc">{res.desc}</span>
-                {/if}
-              </div>
-            {/each}
-          </div>
-        </div>
-
-        <div class="author-final card-glass">
-          <div class="author-avatar">AL</div>
-          <div class="author-body">
-            <span class="author-name">Alejandro de la Fuente</span>
-            <div class="author-links">
-              <span class="author-link">🌐 tellmealex.dev</span>
-            </div>
-          </div>
-        </div>
-
         <div class="final-quote">
           <span class="quote-icon">💬</span>
           <p>"La IA no te va a sustituir.<br />Te va a sustituir alguien que sabe usar la IA mejor que tú."</p>
+        </div>
+        <div class="author-final card-glass">
+          <img src="https://www.gravatar.com/avatar/8461e0b8674185c1df153079e820504b?s=96&d=mp" alt="Alejandro de la Fuente" class="author-avatar" />
+          <div class="author-body">
+            <span class="author-name">Alejandro de la Fuente</span>
+            <div class="author-links">
+              <a href="https://tellmealex.dev" target="_blank" rel="noopener noreferrer" class="author-link">🌐 tellmealex.dev</a>
+              <a href="https://github.com/TellMeAlex" target="_blank" rel="noopener noreferrer" class="author-link">🐙 github.com/TellMeAlex</a>
+              <a href="https://es.linkedin.com/in/alejandro-de-la-fuente" target="_blank" rel="noopener noreferrer" class="author-link">💼 LinkedIn</a>
+            </div>
+          </div>
         </div>
         <div class="branding">
           Hecho con ❤️ por Código Sin Siesta
         </div>
       </div>
+
+
     </div>
   </div>
 
@@ -165,7 +142,7 @@
   /* Layout */
   .main-layout {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
     align-items: start;
   }
@@ -181,10 +158,11 @@
   }
 
   /* Takeaways */
-  .takeaways-col {
-    display: flex;
+.takeaways-col {
+display: flex;
     flex-direction: column;
-  }
+    gap: var(--spacing-lg);
+}
 
   .takeaways-list {
     display: flex;
@@ -232,75 +210,6 @@
     gap: var(--spacing-lg);
   }
 
-  /* Resources */
-  .resources {
-    padding: var(--spacing-xl);
-  }
-
-  .resources-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
-  .resource-item {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: rgba(59, 130, 246, 0.05);
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(96, 165, 250, 0.08);
-  }
-
-  .res-icon { font-size: 1.1rem; flex-shrink: 0; }
-
-  .res-body {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    flex: 1;
-  }
-
-  .res-label {
-    font-family: var(--font-display);
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: var(--color-neutral-light);
-  }
-
-  .res-url {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--color-electric);
-    opacity: 0.65;
-  }
-
-  .res-desc {
-    font-size: 0.75rem;
-    color: var(--color-neutral-light);
-    opacity: 0.45;
-    white-space: nowrap;
-    font-family: var(--font-mono);
-  }
-
-  /* Featured resource */
-  .resource-item.featured {
-    background: rgba(59, 130, 246, 0.12);
-    border-color: rgba(96, 165, 250, 0.3);
-    box-shadow: 0 0 12px rgba(96, 165, 250, 0.15);
-  }
-
-  .featured-badge {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--color-accent-bright);
-    background: rgba(59, 130, 246, 0.2);
-    padding: 2px 8px;
-    border-radius: var(--radius-sm);
-    white-space: nowrap;
-  }
 
   /* Author */
   .author-final {
@@ -310,19 +219,12 @@
     padding: var(--spacing-lg) var(--spacing-xl);
   }
 
-  .author-avatar {
+.author-avatar {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1rem;
-    color: var(--color-base-dark);
     flex-shrink: 0;
+    object-fit: cover;
   }
 
   .author-body {
@@ -341,7 +243,7 @@
   .author-links {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 6px;
   }
 
   .author-link {
@@ -349,6 +251,12 @@
     font-size: 0.72rem;
     color: var(--color-electric);
     opacity: 0.7;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+  }
+
+  .author-link:hover {
+    opacity: 1;
   }
 
   /* Final quote */
@@ -471,35 +379,6 @@
       font-size: 0.82rem;
     }
 
-    .resources {
-      padding: var(--spacing-lg);
-    }
-
-    .resource-item {
-      padding: var(--spacing-md);
-      min-height: 44px;
-    }
-
-    .res-icon {
-      font-size: 1rem;
-    }
-
-    .res-label {
-      font-size: 0.85rem;
-    }
-
-    .res-url {
-      font-size: 0.7rem;
-    }
-
-    .res-desc {
-      font-size: 0.72rem;
-    }
-
-    .featured-badge {
-      font-size: 0.65rem;
-      padding: 2px 6px;
-    }
 
     .author-final {
       padding: var(--spacing-md) var(--spacing-lg);
@@ -577,36 +456,6 @@
       font-size: 0.78rem;
     }
 
-    .resources {
-      padding: var(--spacing-md);
-    }
-
-    .resource-item {
-      padding: var(--spacing-sm) var(--spacing-md);
-      min-height: 44px;
-      gap: var(--spacing-sm);
-    }
-
-    .res-icon {
-      font-size: 0.9rem;
-    }
-
-    .res-label {
-      font-size: 0.8rem;
-    }
-
-    .res-url {
-      font-size: 0.68rem;
-    }
-
-    .res-desc {
-      font-size: 0.7rem;
-    }
-
-    .featured-badge {
-      font-size: 0.6rem;
-      padding: 2px 5px;
-    }
 
     .author-final {
       padding: var(--spacing-sm) var(--spacing-md);
@@ -682,38 +531,6 @@
       font-size: 0.72rem;
     }
 
-    .resources {
-      padding: var(--spacing-sm);
-    }
-
-    .resources-list {
-      gap: var(--spacing-xs);
-    }
-
-    .resource-item {
-      padding: var(--spacing-sm);
-      min-height: 44px;
-    }
-
-    .res-icon {
-      font-size: 0.85rem;
-    }
-
-    .res-label {
-      font-size: 0.78rem;
-    }
-
-    .res-url {
-      font-size: 0.65rem;
-    }
-
-    .res-desc {
-      font-size: 0.68rem;
-    }
-
-    .featured-badge {
-      font-size: 0.55rem;
-    }
 
     .author-final {
       padding: var(--spacing-sm);
@@ -782,9 +599,6 @@
       gap: var(--spacing-sm);
     }
 
-    .resources {
-      padding: var(--spacing-md);
-    }
 
     .author-final {
       padding: var(--spacing-md);
