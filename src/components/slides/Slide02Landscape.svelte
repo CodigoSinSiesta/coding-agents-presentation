@@ -289,4 +289,16 @@
   @media (max-width: 480px) {
     .tools-grid { grid-template-columns: 1fr; }
   }
+
+  @media (max-width: 390px) {
+    .slide-content {
+      padding: var(--spacing-lg) var(--spacing-md);
+    }
+    .tool-card {
+      padding: var(--spacing-lg);
+    }
+    .tool-desc {
+      font-size: 0.8rem;
+    }
+  }
 </style>

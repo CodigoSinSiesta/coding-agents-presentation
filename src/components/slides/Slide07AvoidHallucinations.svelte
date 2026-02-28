@@ -220,5 +220,16 @@
 
   @media (max-width: 600px) {
     .techniques-grid { grid-template-columns: 1fr; }
+    .tech-card { padding: var(--spacing-lg); }
+    .tech-title { font-size: 0.95rem; }
+  }
+
+  @media (max-width: 390px) {
+    .techniques-grid { gap: var(--spacing-md); }
+    .tech-card { padding: var(--spacing-md); }
+    .tech-desc { font-size: 0.8rem; }
+    .tech-example { padding: var(--spacing-xs) var(--spacing-sm); }
+    .example-text { font-size: 0.7rem; }
+    .slide-content { gap: var(--spacing-lg); }
   }
 </style>

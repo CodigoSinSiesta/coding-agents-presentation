@@ -275,5 +275,72 @@
     .title { font-size: clamp(2.2rem, 10vw, 3.5rem); }
     .subtitle { font-size: 1rem; }
     .author-avatar { width: 42px; height: 42px; font-size: 0.9rem; }
+    .tool-badge {
+      padding: 10px var(--spacing-md);
+      min-height: 44px;
+    }
   }
-</style>
+
+  /* Mobile: Small phone */
+  @media (max-width: 390px) {
+    .slide-content {
+      padding: var(--spacing-sm);
+      gap: var(--spacing-md);
+    }
+
+    .title {
+      font-size: clamp(1.8rem, 9vw, 2.8rem);
+      line-height: 1.1;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      gap: var(--spacing-xs);
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .tools-row {
+      gap: 6px;
+    }
+
+    .tool-badge {
+      padding: 8px var(--spacing-sm);
+      font-size: 0.72rem;
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .author-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-md);
+      min-height: 60px;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-size: 0.95rem;
+    }
+
+    .author-role {
+      font-size: 0.8rem;
+    }
+  }
+
