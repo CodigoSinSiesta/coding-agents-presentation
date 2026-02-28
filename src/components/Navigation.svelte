@@ -6,7 +6,7 @@
   let currentSlide = 0;
   let totalSlides = 11;
   let slides = [];
-let menuOpen = false;
+  let menuOpen = false;
 
   // Touch gesture state for mobile swipe navigation
   let touchStartX = 0;
