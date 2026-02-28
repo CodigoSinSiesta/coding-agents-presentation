@@ -35,10 +35,15 @@
     </div>
 
     <div class="author-card card-glass">
-      <div class="author-avatar">AL</div>
+      <img src="https://www.gravatar.com/avatar/8461e0b8674185c1df153079e820504b?s=96&d=mp" alt="Alejandro de la Fuente" class="author-avatar" />
       <div class="author-info">
         <p class="author-name">Alejandro de la Fuente</p>
         <p class="author-role">Technical Leader · NTT Data · GDE</p>
+        <div class="author-links">
+          <a href="https://tellmealex.dev" target="_blank" rel="noopener noreferrer" class="author-link">🌐</a>
+          <a href="https://github.com/TellMeAlex" target="_blank" rel="noopener noreferrer" class="author-link">🐙</a>
+          <a href="https://es.linkedin.com/in/alejandro-de-la-fuente" target="_blank" rel="noopener noreferrer" class="author-link">💼</a>
+        </div>
       </div>
     </div>
   </div>
@@ -183,16 +188,9 @@
   .author-avatar {
     width: 52px;
     height: 52px;
-    background: linear-gradient(135deg, var(--color-accent-bright), var(--color-electric));
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: var(--color-base-dark);
     flex-shrink: 0;
+    object-fit: cover;
   }
 
   .author-name {
@@ -207,6 +205,23 @@
     color: var(--color-electric);
     opacity: 0.85;
     font-family: var(--font-mono);
+  }
+
+  .author-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
+  }
+
+  .author-link {
+    font-size: 1rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+  }
+
+  .author-link:hover {
+    opacity: 1;
   }
 
   /* Decorative orbs */
@@ -274,7 +289,7 @@
   @media (max-width: 480px) {
     .title { font-size: clamp(2.2rem, 10vw, 3.5rem); }
     .subtitle { font-size: 1rem; }
-    .author-avatar { width: 42px; height: 42px; font-size: 0.9rem; }
+    .author-avatar { width: 42px; height: 42px; }
     .tool-badge {
       padding: 10px var(--spacing-md);
       min-height: 44px;
@@ -331,7 +346,6 @@
     .author-avatar {
       width: 44px;
       height: 44px;
-      font-size: 0.9rem;
       flex-shrink: 0;
     }
 
