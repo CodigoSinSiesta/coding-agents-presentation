@@ -112,6 +112,9 @@ de producción siguiendo Clean Architecture.
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
+    overflow-y: auto;
+    max-height: 100vh;
+    -webkit-overflow-scrolling: touch;
   }
 
   .slide-header { text-align: center; }
@@ -329,7 +332,206 @@ de producción siguiendo Clean Architecture.
     .main-layout { grid-template-columns: 1fr; }
   }
 
+  /* Mobile: Small tablet / large phone */
   @media (max-width: 768px) {
-    .title { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    .slide-content {
+      padding: var(--spacing-lg) var(--spacing-md);
+      gap: var(--spacing-lg);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+    }
+
+    .main-layout {
+      gap: var(--spacing-lg);
+    }
+
+    .definition-card {
+      padding: var(--spacing-lg);
+      gap: var(--spacing-md);
+    }
+
+    .def-icon { font-size: 1.8rem; }
+
+    .def-body h3 { font-size: 1rem; }
+
+    .def-body p { font-size: 0.85rem; }
+
+    .analogy-card {
+      padding: var(--spacing-lg);
+    }
+
+    .analogy-icon { font-size: 1.3rem; }
+
+    .analogy-card p { font-size: 0.82rem; }
+
+    .code-header {
+      padding: var(--spacing-md);
+    }
+
+    .code-content {
+      padding: var(--spacing-md);
+      font-size: 0.72rem;
+    }
+
+    .key-point {
+      padding: var(--spacing-md);
+      min-height: 44px;
+      align-items: center;
+    }
+
+    .kp-icon { font-size: 0.9rem; }
+
+    .kp-text { font-size: 0.8rem; }
   }
-</style>
+
+  /* Mobile: Phone */
+  @media (max-width: 480px) {
+    .slide-content {
+      padding: var(--spacing-md) var(--spacing-sm);
+      gap: var(--spacing-md);
+    }
+
+    .slide-header {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .label {
+      font-size: 0.7rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .title {
+      font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .subtitle {
+      font-size: 0.8rem;
+    }
+
+    .definition-card {
+      padding: var(--spacing-md);
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .def-icon {
+      font-size: 1.5rem;
+    }
+
+    .def-body h3 {
+      font-size: 0.95rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .def-body p {
+      font-size: 0.8rem;
+    }
+
+    .analogy-card {
+      padding: var(--spacing-md);
+    }
+
+    .analogy-header {
+      gap: var(--spacing-xs);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .analogy-icon { font-size: 1.2rem; }
+
+    .analogy-label { font-size: 0.7rem; }
+
+    .analogy-card p { font-size: 0.78rem; }
+
+    .code-header {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-xs);
+    }
+
+    .code-dot {
+      width: 8px;
+      height: 8px;
+    }
+
+    .code-filename {
+      font-size: 0.7rem;
+    }
+
+    .code-content {
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: 0.68rem;
+      line-height: 1.6;
+    }
+
+    .key-point {
+      padding: var(--spacing-sm) var(--spacing-md);
+      min-height: 44px;
+      gap: var(--spacing-sm);
+    }
+
+    .kp-icon { font-size: 0.85rem; }
+
+    .kp-text { font-size: 0.75rem; }
+  }
+
+  /* Mobile: Small phone */
+  @media (max-width: 390px) {
+    .slide-content {
+      padding: var(--spacing-sm);
+      gap: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.2rem, 6vw, 1.6rem);
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+    }
+
+    .definition-card {
+      padding: var(--spacing-sm);
+    }
+
+    .def-icon { font-size: 1.3rem; }
+
+    .def-body h3 { font-size: 0.9rem; }
+
+    .def-body p { font-size: 0.75rem; }
+
+    .analogy-card {
+      padding: var(--spacing-sm);
+    }
+
+    .analogy-icon { font-size: 1.1rem; }
+
+    .analogy-card p { font-size: 0.72rem; }
+
+    .code-header {
+      padding: var(--spacing-sm);
+    }
+
+    .code-dot {
+      width: 6px;
+      height: 6px;
+    }
+
+    .code-content {
+      padding: var(--spacing-sm);
+      font-size: 0.62rem;
+    }
+
+    .key-point {
+      padding: var(--spacing-sm);
+      min-height: 44px;
+    }
+
+    .kp-icon { font-size: 0.8rem; }
+
+    .kp-text { font-size: 0.7rem; }
+  }

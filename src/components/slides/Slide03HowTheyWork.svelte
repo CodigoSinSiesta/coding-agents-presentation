@@ -104,7 +104,7 @@
     z-index: 1;
   }
 
-  .slide-content {
+.slide-content {
     position: relative;
     z-index: 2;
     max-width: 1200px;
@@ -113,6 +113,9 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
+    overflow-y: auto;
+    max-height: 100vh;
+    -webkit-overflow-scrolling: touch;
   }
 
   .slide-header { text-align: center; }
@@ -271,11 +274,229 @@
     font-weight: 700;
   }
 
+  /* Mobile: Tablet */
   @media (max-width: 900px) {
     .main-layout { grid-template-columns: 1fr; }
   }
 
+  /* Mobile: Small tablet / large phone */
   @media (max-width: 768px) {
-    .title { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    .slide-content {
+      padding: var(--spacing-lg) var(--spacing-md);
+      gap: var(--spacing-lg);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+    }
+
+    .main-layout {
+      gap: var(--spacing-lg);
+    }
+
+    .loop-diagram {
+      padding: var(--spacing-lg);
+    }
+
+    .loop-title {
+      font-size: 0.8rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .step {
+      padding: var(--spacing-md);
+      gap: var(--spacing-sm);
+      min-height: 44px;
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      font-size: 0.85rem;
+    }
+
+    .step-name {
+      font-size: 0.95rem;
+    }
+
+    .step-desc {
+      font-size: 0.75rem;
+    }
+
+    .step-arrow {
+      font-size: 1rem;
+    }
+
+    .loop-back {
+      font-size: 0.68rem;
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .concepts {
+      gap: var(--spacing-sm);
+    }
+
+    .concept-card {
+      padding: var(--spacing-md) var(--spacing-lg);
+      gap: var(--spacing-md);
+      min-height: 44px;
+    }
+
+    .concept-icon {
+      font-size: 1.6rem;
+    }
+
+    .concept-body h4 {
+      font-size: 1rem;
+    }
+
+    .concept-body p {
+      font-size: 0.82rem;
+    }
+  }
+
+  /* Mobile: Phone */
+  @media (max-width: 480px) {
+    .slide-content {
+      padding: var(--spacing-md) var(--spacing-sm);
+      gap: var(--spacing-md);
+    }
+
+    .slide-header {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .label {
+      font-size: 0.7rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .title {
+      font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .loop-diagram {
+      padding: var(--spacing-md);
+    }
+
+    .loop-title {
+      font-size: 0.75rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .loop-steps {
+      gap: 2px;
+    }
+
+    .step {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-sm);
+      min-height: 48px;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      font-size: 0.8rem;
+    }
+
+    .step-name {
+      font-size: 0.9rem;
+    }
+
+    .step-desc {
+      font-size: 0.7rem;
+    }
+
+    .step-arrow {
+      font-size: 0.9rem;
+    }
+
+    .loop-back {
+      font-size: 0.62rem;
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .concept-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .concept-icon {
+      font-size: 1.4rem;
+    }
+
+    .concept-body h4 {
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .concept-body p {
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* Mobile: Small phone */
+  @media (max-width: 390px) {
+    .slide-content {
+      padding: var(--spacing-sm);
+      gap: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.2rem, 6vw, 1.6rem);
+    }
+
+    .loop-diagram {
+      padding: var(--spacing-sm);
+    }
+
+    .loop-title {
+      font-size: 0.7rem;
+    }
+
+    .step {
+      padding: var(--spacing-sm);
+      min-height: 44px;
+    }
+
+    .step-number {
+      width: 22px;
+      height: 22px;
+      font-size: 0.75rem;
+    }
+
+    .step-name {
+      font-size: 0.85rem;
+    }
+
+    .step-desc {
+      font-size: 0.65rem;
+    }
+
+    .step-arrow {
+      font-size: 0.8rem;
+    }
+
+    .loop-back {
+      font-size: 0.58rem;
+    }
+
+    .concept-card {
+      padding: var(--spacing-sm);
+    }
+
+    .concept-icon {
+      font-size: 1.2rem;
+    }
+
+    .concept-body h4 {
+      font-size: 0.85rem;
+    }
+
+    .concept-body p {
+      font-size: 0.7rem;
+    }
   }
 </style>

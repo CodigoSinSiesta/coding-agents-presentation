@@ -130,6 +130,9 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
+    overflow-y: auto;
+    max-height: 100vh;
+    -webkit-overflow-scrolling: touch;
   }
 
   .slide-header { text-align: center; }
@@ -352,5 +355,205 @@
 
   @media (max-width: 900px) {
     .main-layout { grid-template-columns: 1fr; }
+  }
+
+  /* Mobile: Small tablet / large phone */
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: var(--spacing-lg) var(--spacing-md);
+      gap: var(--spacing-lg);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+    }
+
+    .main-layout {
+      gap: var(--spacing-lg);
+    }
+
+    .what-card {
+      padding: var(--spacing-lg);
+    }
+
+    .what-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .layer {
+      padding: var(--spacing-sm) var(--spacing-md);
+      min-height: 44px;
+    }
+
+    .layer-icon { font-size: 0.9rem; }
+    .layer-name { font-size: 0.8rem; }
+    .layer-size { font-size: 0.7rem; }
+
+    .tip-card {
+      padding: var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .tip-card p { font-size: 0.78rem; }
+
+    .files-title {
+      font-size: 0.72rem;
+    }
+
+    .context-file-card {
+      padding: var(--spacing-md);
+    }
+
+    .cf-header {
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+
+    .cf-filename { font-size: 0.85rem; }
+    .cf-tool { font-size: 0.6rem; }
+    .cf-content { font-size: 0.75rem; }
+
+    .pro-tip {
+      padding: var(--spacing-md);
+      gap: var(--spacing-md);
+    }
+
+    .pro-icon { font-size: 1.3rem; }
+    .pro-body p { font-size: 0.78rem; }
+  }
+
+  /* Mobile: Phone */
+  @media (max-width: 480px) {
+    .slide-content {
+      padding: var(--spacing-md) var(--spacing-sm);
+      gap: var(--spacing-md);
+    }
+
+    .slide-header {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .label {
+      font-size: 0.7rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .title {
+      font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .subtitle {
+      font-size: 0.8rem;
+    }
+
+    .what-card {
+      padding: var(--spacing-md);
+    }
+
+    .what-card h3 {
+      font-size: 0.9rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .context-layers {
+      gap: var(--spacing-xs);
+    }
+
+    .layer {
+      padding: var(--spacing-sm);
+      min-height: 48px;
+      gap: var(--spacing-sm);
+    }
+
+    .layer-icon { font-size: 0.85rem; }
+    .layer-name { font-size: 0.75rem; }
+    .layer-size { font-size: 0.65rem; }
+
+    .tip-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .tip-icon { font-size: 1rem; }
+    .tip-card p { font-size: 0.75rem; }
+
+    .files-title {
+      font-size: 0.68rem;
+    }
+
+    .context-file-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .cf-filename { font-size: 0.8rem; }
+    .cf-tool { font-size: 0.58rem; }
+    .cf-content { font-size: 0.72rem; }
+
+    .pro-tip {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .pro-icon { font-size: 1.1rem; }
+    .pro-title { font-size: 0.65rem; }
+    .pro-body p { font-size: 0.75rem; }
+  }
+
+  /* Mobile: Small phone */
+  @media (max-width: 390px) {
+    .slide-content {
+      padding: var(--spacing-sm);
+      gap: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.2rem, 6vw, 1.6rem);
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+    }
+
+    .what-card {
+      padding: var(--spacing-sm);
+    }
+
+    .what-card h3 {
+      font-size: 0.85rem;
+    }
+
+    .layer {
+      padding: var(--spacing-xs) var(--spacing-sm);
+      min-height: 44px;
+    }
+
+    .layer-icon { font-size: 0.8rem; }
+    .layer-name { font-size: 0.7rem; }
+    .layer-size { font-size: 0.6rem; }
+
+    .tip-card {
+      padding: var(--spacing-sm);
+    }
+
+    .tip-card p { font-size: 0.7rem; }
+
+    .context-file-card {
+      padding: var(--spacing-sm);
+    }
+
+    .cf-filename { font-size: 0.75rem; }
+    .cf-tool { font-size: 0.55rem; }
+    .cf-content { font-size: 0.68rem; }
+
+    .pro-tip {
+      padding: var(--spacing-sm);
+    }
+
+    .pro-icon { font-size: 1rem; }
+    .pro-body p { font-size: 0.7rem; }
   }
 </style>

@@ -128,6 +128,9 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
+    overflow-y: auto;
+    max-height: 100vh;
+    -webkit-overflow-scrolling: touch;
   }
 
   .slide-header { text-align: center; }
@@ -392,10 +395,321 @@
 
   .reminder-box strong { color: var(--color-electric); font-style: normal; font-weight: 700; }
 
+  /* Mobile: Tablet */
   @media (max-width: 900px) {
     .main-layout { grid-template-columns: 1fr; }
     .wf-steps { flex-direction: column; }
     .wf-step { width: 100%; flex: none; }
     .wf-arrow { transform: rotate(90deg); }
+  }
+
+  /* Mobile: Small tablet / large phone */
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: var(--spacing-lg) var(--spacing-md);
+      gap: var(--spacing-lg);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+    }
+
+    .main-layout {
+      gap: var(--spacing-lg);
+    }
+
+    .steps-card {
+      padding: var(--spacing-lg);
+    }
+
+    .steps-title {
+      font-size: 0.72rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .demo-step {
+      gap: var(--spacing-md);
+      min-height: 44px;
+    }
+
+    .step-num {
+      font-size: 0.68rem;
+      padding-top: 2px;
+    }
+
+    .step-title {
+      font-size: 0.9rem;
+    }
+
+    .step-desc {
+      font-size: 0.78rem;
+      padding-left: calc(1rem + var(--spacing-sm));
+    }
+
+    .workflow-chain {
+      padding: var(--spacing-lg);
+    }
+
+    .wf-title {
+      font-size: 0.72rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .wf-step {
+      padding: var(--spacing-sm);
+    }
+
+    .wf-icon {
+      font-size: 1rem;
+    }
+
+    .wf-label {
+      font-size: 0.78rem;
+    }
+
+    .wf-cmd {
+      font-size: 0.6rem;
+    }
+
+    .terminal-header {
+      padding: var(--spacing-md);
+    }
+
+    .t-title {
+      font-size: 0.68rem;
+    }
+
+    .terminal-body {
+      padding: var(--spacing-md);
+      overflow-x: auto;
+    }
+
+    .t-line {
+      font-size: 0.72rem;
+    }
+
+    .reminder-box {
+      padding: var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .reminder-icon {
+      font-size: 1rem;
+    }
+
+    .reminder-box p {
+      font-size: 0.78rem;
+    }
+  }
+
+  /* Mobile: Phone */
+  @media (max-width: 480px) {
+    .slide-content {
+      padding: var(--spacing-md) var(--spacing-sm);
+      gap: var(--spacing-md);
+    }
+
+    .slide-header {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .label {
+      font-size: 0.7rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .title {
+      font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .subtitle {
+      font-size: 0.8rem;
+    }
+
+    .steps-card {
+      padding: var(--spacing-md);
+    }
+
+    .steps-title {
+      font-size: 0.68rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .steps-list {
+      gap: var(--spacing-sm);
+    }
+
+    .demo-step {
+      gap: var(--spacing-sm);
+      min-height: 44px;
+    }
+
+    .step-num {
+      font-size: 0.65rem;
+    }
+
+    .step-icon {
+      font-size: 0.9rem;
+    }
+
+    .step-title {
+      font-size: 0.85rem;
+    }
+
+    .step-desc {
+      font-size: 0.72rem;
+      padding-left: 1rem;
+    }
+
+    .workflow-chain {
+      padding: var(--spacing-md);
+    }
+
+    .wf-title {
+      font-size: 0.65rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .wf-step {
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .wf-icon {
+      font-size: 0.9rem;
+    }
+
+    .wf-label {
+      font-size: 0.75rem;
+    }
+
+    .wf-cmd {
+      font-size: 0.58rem;
+    }
+
+    .terminal-header {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .t-dot {
+      width: 8px;
+      height: 8px;
+    }
+
+    .t-title {
+      font-size: 0.65rem;
+    }
+
+    .terminal-body {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: 4px;
+    }
+
+    .t-line {
+      font-size: 0.68rem;
+    }
+
+    .reminder-box {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .reminder-icon {
+      font-size: 0.9rem;
+    }
+
+    .reminder-box p {
+      font-size: 0.72rem;
+    }
+  }
+
+  /* Mobile: Small phone */
+  @media (max-width: 390px) {
+    .slide-content {
+      padding: var(--spacing-sm);
+      gap: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.2rem, 6vw, 1.6rem);
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+    }
+
+    .steps-card {
+      padding: var(--spacing-sm);
+    }
+
+    .steps-title {
+      font-size: 0.62rem;
+    }
+
+    .demo-step {
+      min-height: 44px;
+    }
+
+    .step-num {
+      font-size: 0.6rem;
+    }
+
+    .step-icon {
+      font-size: 0.85rem;
+    }
+
+    .step-title {
+      font-size: 0.8rem;
+    }
+
+    .step-desc {
+      font-size: 0.68rem;
+    }
+
+    .workflow-chain {
+      padding: var(--spacing-sm);
+    }
+
+    .wf-title {
+      font-size: 0.6rem;
+    }
+
+    .wf-icon {
+      font-size: 0.85rem;
+    }
+
+    .wf-label {
+      font-size: 0.72rem;
+    }
+
+    .wf-cmd {
+      font-size: 0.55rem;
+    }
+
+    .terminal-header {
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .t-title {
+      font-size: 0.6rem;
+    }
+
+    .terminal-body {
+      padding: var(--spacing-sm);
+    }
+
+    .t-line {
+      font-size: 0.62rem;
+    }
+
+    .reminder-box {
+      padding: var(--spacing-sm);
+    }
+
+    .reminder-box p {
+      font-size: 0.68rem;
+    }
   }
 </style>
