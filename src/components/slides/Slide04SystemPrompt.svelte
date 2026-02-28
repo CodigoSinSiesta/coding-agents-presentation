@@ -535,3 +535,4 @@ de producción siguiendo Clean Architecture.
 
     .kp-text { font-size: 0.7rem; }
   }
+</style>

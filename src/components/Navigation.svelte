@@ -197,6 +197,7 @@
       // Swipe left (negative delta) -> next slide
       nextSlide();
     }
+  }
 </script>
 
 <div
@@ -250,9 +251,9 @@
     <span class="hamburger-line"></span>
   </button>
 
-  <!-- Slide Drawer Overlay -->
+ <!-- Slide Drawer Overlay -->
   {#if menuOpen}
-    <div class="drawer-overlay" on:click={() => menuOpen = false} on:keydown|preventDefault></div>
+    <div class="drawer-overlay" on:click={() => menuOpen = false}></div>
   {/if}
 
   <!-- Slide Drawer -->
@@ -618,10 +619,9 @@
 
   @media (max-width: 768px) {
     .nav-btn {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
     }
-
     .nav-btn-prev {
       left: var(--spacing-lg);
     }
@@ -648,10 +648,9 @@
 
   @media (max-width: 480px) {
     .nav-btn {
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
     }
-
     :global(.swiper-pagination) {
       bottom: var(--spacing-xl) !important;
     }
