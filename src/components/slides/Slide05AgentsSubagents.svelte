@@ -109,7 +109,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
   }
@@ -132,6 +132,9 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
+    overflow-y: auto;
+    max-height: 100vh;
+    -webkit-overflow-scrolling: touch;
   }
 
   .slide-header { text-align: center; }
@@ -416,7 +419,303 @@
 
   .warning-card strong { color: #ffbd2e; font-weight: 700; }
 
+  /* Mobile: Tablet */
   @media (max-width: 900px) {
     .main-layout { grid-template-columns: 1fr; }
+  }
+
+  /* Mobile: Small tablet / large phone */
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: var(--spacing-lg) var(--spacing-md);
+      gap: var(--spacing-lg);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+    }
+
+    .main-layout {
+      gap: var(--spacing-lg);
+    }
+
+    .orchestrator {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .orch-icon { font-size: 1.6rem; }
+
+    .orch-label { font-size: 1rem; }
+
+    .arrows-row {
+      padding: var(--spacing-sm) 0;
+    }
+
+    .subagents-row {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .subagent {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+      gap: var(--spacing-md);
+      padding: var(--spacing-md);
+      min-height: 60px;
+    }
+
+    .sub-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .sub-name { font-size: 0.9rem; }
+
+    .sub-task { font-size: 0.75rem; }
+
+    .result-box {
+      padding: var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .result-text { font-size: 0.85rem; }
+
+    .when-card {
+      padding: var(--spacing-lg);
+    }
+
+    .when-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .checklist li {
+      font-size: 0.82rem;
+      min-height: 44px;
+      align-items: center;
+    }
+
+    .check {
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .example-header {
+      padding: var(--spacing-md);
+    }
+
+    .ex-code {
+      padding: var(--spacing-md);
+      font-size: 0.72rem;
+      line-height: 1.6;
+    }
+
+    .warning-card {
+      padding: var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .warning-card p {
+      font-size: 0.78rem;
+    }
+  }
+
+  /* Mobile: Phone */
+  @media (max-width: 480px) {
+    .slide-content {
+      padding: var(--spacing-md) var(--spacing-sm);
+      gap: var(--spacing-md);
+    }
+
+    .slide-header {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .label {
+      font-size: 0.7rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .title {
+      font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .subtitle {
+      font-size: 0.8rem;
+    }
+
+    .orchestrator {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .orch-icon { font-size: 1.4rem; }
+
+    .orch-label { font-size: 0.9rem; }
+
+    .orch-desc { font-size: 0.72rem; }
+
+    .arrow-line {
+      height: 18px;
+    }
+
+    .arrow-line::after {
+      font-size: 0.5rem;
+      bottom: -12px;
+    }
+
+    .subagent {
+      padding: var(--spacing-sm) var(--spacing-md);
+      min-height: 52px;
+      gap: var(--spacing-sm);
+    }
+
+    .sub-icon { font-size: 1.2rem; }
+
+    .sub-name { font-size: 0.85rem; }
+
+    .sub-task { font-size: 0.7rem; }
+
+    .result-arrow {
+      font-size: 0.68rem;
+      padding: var(--spacing-xs) 0;
+    }
+
+    .result-box {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .result-icon { font-size: 1rem; }
+
+    .result-text { font-size: 0.8rem; }
+
+    .when-card {
+      padding: var(--spacing-md);
+    }
+
+    .when-card h3 {
+      font-size: 0.9rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .checklist {
+      gap: var(--spacing-sm);
+    }
+
+    .checklist li {
+      font-size: 0.78rem;
+      gap: var(--spacing-sm);
+    }
+
+    .check {
+      min-width: 44px;
+      font-size: 0.85rem;
+    }
+
+    .example-header {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-xs);
+    }
+
+    .ex-icon { font-size: 0.9rem; }
+
+    .ex-label {
+      font-size: 0.68rem;
+    }
+
+    .ex-code {
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: 0.68rem;
+      line-height: 1.5;
+    }
+
+    .warning-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .warn-icon { font-size: 1rem; }
+
+    .warning-card p {
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* Mobile: Small phone */
+  @media (max-width: 390px) {
+    .slide-content {
+      padding: var(--spacing-sm);
+      gap: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.2rem, 6vw, 1.6rem);
+    }
+
+    .subtitle {
+      font-size: 0.75rem;
+    }
+
+    .orchestrator {
+      padding: var(--spacing-sm);
+    }
+
+    .orch-icon { font-size: 1.2rem; }
+
+    .orch-label { font-size: 0.85rem; }
+
+    .orch-desc { font-size: 0.68rem; }
+
+    .subagent {
+      padding: var(--spacing-sm);
+      min-height: 48px;
+    }
+
+    .sub-icon { font-size: 1.1rem; }
+
+    .sub-name { font-size: 0.8rem; }
+
+    .sub-task { font-size: 0.65rem; }
+
+    .when-card {
+      padding: var(--spacing-sm);
+    }
+
+    .when-card h3 {
+      font-size: 0.85rem;
+    }
+
+    .checklist li {
+      font-size: 0.72rem;
+    }
+
+    .check {
+      min-width: 44px;
+      font-size: 0.8rem;
+    }
+
+    .ex-code {
+      padding: var(--spacing-sm);
+      font-size: 0.65rem;
+    }
+
+    .warning-card {
+      padding: var(--spacing-sm);
+    }
+
+    .warning-card p {
+      font-size: 0.7rem;
+    }
   }
 </style>

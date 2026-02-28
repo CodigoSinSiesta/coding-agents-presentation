@@ -6,7 +6,15 @@
   let currentSlide = 0;
   let totalSlides = 11;
   let slides = [];
-  let menuOpen = false;
+let menuOpen = false;
+
+  // Touch gesture state for mobile swipe navigation
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+  let isSwiping = false;
+  let lastSwipeTime = 0;
 
   const slideNames = [
     'hero',
@@ -126,9 +134,77 @@
   function prevSlide() {
     goToSlide(currentSlide - 1);
   }
+
+  // Touch gesture handlers for mobile swipe navigation
+  const SWIPE_THRESHOLD = 50; // Minimum px for swipe detection
+  const SWIPE_DEBOUNCE = 300; // Ms between swipes
+
+  function handleTouchStart(event) {
+    const touch = event.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    touchEndX = touch.clientX;
+    touchEndY = touch.clientY;
+    isSwiping = true;
+  }
+
+  function handleTouchMove(event) {
+    if (!isSwiping) return;
+    const touch = event.touches[0];
+    touchEndX = touch.clientX;
+    touchEndY = touch.clientY;
+  }
+
+  function handleTouchEnd() {
+    if (!isSwiping) return;
+    isSwiping = false;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    const absDeltaX = Math.abs(deltaX);
+    const absDeltaY = Math.abs(deltaY);
+
+    // Check debounce - prevent rapid swipes
+    const now = Date.now();
+    if (now - lastSwipeTime < SWIPE_DEBOUNCE) return;
+
+    // Horizontal movement must be dominant and exceed threshold
+    if (absDeltaX < SWIPE_THRESHOLD) return;
+    if (absDeltaY > absDeltaX) return; // Vertical scroll - don't interfere
+
+    // Check if touch started in a scrollable area
+    const element = document.elementFromPoint(touchStartX, touchStartY);
+    if (element) {
+      const isScrollable =
+        element.closest('.slide-drawer') ||
+        element.closest('[style*="overflow"]') ||
+        (element.scrollHeight > element.clientHeight);
+      if (isScrollable) return;
+    }
+
+    // Valid swipe detected
+    lastSwipeTime = now;
+
+    // Close menu if open to prevent conflict
+    if (menuOpen) {
+      menuOpen = false;
+    }
+
+    if (deltaX > 0) {
+      // Swipe right (positive delta) -> previous slide
+      prevSlide();
+    } else {
+      // Swipe left (negative delta) -> next slide
+      nextSlide();
+    }
 </script>
 
-<div class="presentation-container">
+<div
+  class="presentation-container"
+  on:touchstart={handleTouchStart}
+  on:touchmove={handleTouchMove}
+  on:touchend={handleTouchEnd}
+>
   <div class="swiper">
     <div class="swiper-wrapper">
       <slot />
