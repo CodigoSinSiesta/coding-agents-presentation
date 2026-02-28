@@ -124,6 +124,9 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xl);
+    overflow-y: auto;
+    max-height: 100vh;
+    -webkit-overflow-scrolling: touch;
   }
 
   .slide-header { text-align: center; }
@@ -335,7 +338,273 @@
     font-style: italic;
   }
 
+  /* Mobile: Tablet */
   @media (max-width: 900px) {
     .main-layout { grid-template-columns: 1fr; }
   }
-</style>
+
+  /* Mobile: Small tablet / large phone */
+  @media (max-width: 768px) {
+    .slide-content {
+      padding: var(--spacing-lg) var(--spacing-md);
+      gap: var(--spacing-lg);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+    }
+
+    .main-layout {
+      gap: var(--spacing-lg);
+    }
+
+    .definition, .analogy {
+      padding: var(--spacing-lg);
+    }
+
+    .def-icon, .ana-icon {
+      font-size: 1.5rem;
+    }
+
+    .def-header h3 {
+      font-size: 0.95rem;
+    }
+
+    .stats-row {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-sm);
+    }
+
+    .stat {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: var(--spacing-md);
+      padding: var(--spacing-md);
+      text-align: left;
+      min-height: 60px;
+    }
+
+    .stat-value {
+      font-size: 1.6rem;
+    }
+
+    .stat-label {
+      text-align: left;
+      font-size: 0.8rem;
+    }
+
+    .examples-title {
+      font-size: 0.75rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .example-card {
+      padding: var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .ex-header {
+      gap: var(--spacing-sm);
+    }
+
+    .ex-icon {
+      font-size: 1.1rem;
+    }
+
+    .ex-title {
+      font-size: 0.9rem;
+    }
+
+    .ex-code-block {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .ex-code {
+      font-size: 0.75rem;
+    }
+
+    .ex-problem {
+      font-size: 0.78rem;
+    }
+
+    .key-insight {
+      padding: var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .key-insight p {
+      font-size: 0.8rem;
+    }
+  }
+
+  /* Mobile: Phone */
+  @media (max-width: 480px) {
+    .slide-content {
+      padding: var(--spacing-md) var(--spacing-sm);
+      gap: var(--spacing-md);
+    }
+
+    .slide-header {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .label {
+      font-size: 0.7rem;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .title {
+      font-size: clamp(1.4rem, 6vw, 1.8rem);
+    }
+
+    .definition, .analogy {
+      padding: var(--spacing-md);
+    }
+
+    .def-header, .ana-header {
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .def-icon, .ana-icon {
+      font-size: 1.3rem;
+    }
+
+    .def-header h3 {
+      font-size: 0.9rem;
+    }
+
+    .definition p, .analogy p {
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .stat {
+      padding: var(--spacing-sm) var(--spacing-md);
+      min-height: 52px;
+    }
+
+    .stat-value {
+      font-size: 1.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+    }
+
+    .example-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .ex-icon {
+      font-size: 1rem;
+    }
+
+    .ex-title {
+      font-size: 0.85rem;
+    }
+
+    .ex-code-block {
+      padding: var(--spacing-sm);
+    }
+
+    .ex-code-label {
+      font-size: 0.6rem;
+    }
+
+    .ex-code {
+      font-size: 0.7rem;
+    }
+
+    .ex-problem {
+      font-size: 0.72rem;
+      gap: var(--spacing-xs);
+    }
+
+    .ex-problem-icon {
+      font-size: 0.85rem;
+    }
+
+    .key-insight {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .insight-icon {
+      font-size: 1rem;
+    }
+
+    .key-insight p {
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+  }
+
+  /* Mobile: Small phone */
+  @media (max-width: 390px) {
+    .slide-content {
+      padding: var(--spacing-sm);
+      gap: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.2rem, 6vw, 1.6rem);
+    }
+
+    .definition, .analogy {
+      padding: var(--spacing-sm);
+    }
+
+    .def-header, .ana-header {
+      gap: var(--spacing-xs);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .def-icon, .ana-icon {
+      font-size: 1.2rem;
+    }
+
+    .def-header h3 {
+      font-size: 0.85rem;
+    }
+
+    .definition p, .analogy p {
+      font-size: 0.78rem;
+    }
+
+    .stat {
+      padding: var(--spacing-sm);
+      min-height: 48px;
+    }
+
+    .stat-value {
+      font-size: 1.2rem;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+    }
+
+    .example-card {
+      padding: var(--spacing-sm);
+    }
+
+    .ex-title {
+      font-size: 0.8rem;
+    }
+
+    .ex-code {
+      font-size: 0.65rem;
+    }
+
+    .ex-problem {
+      font-size: 0.68rem;
+    }
+
+    .key-insight {
+      padding: var(--spacing-sm);
+    }
+
+    .key-insight p {
+      font-size: 0.7rem;
+    }
+  }
