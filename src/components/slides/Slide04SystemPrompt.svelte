@@ -535,4 +535,108 @@ de producción siguiendo Clean Architecture.
 
     .kp-text { font-size: 0.7rem; }
   }
+
+  /* Short desktop screens: compress vertical spacing so content fits without scroll */
+  @media (max-height: 900px) and (min-width: 769px) {
+    .slide-content {
+      padding: 12px var(--spacing-content);
+      gap: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+
+    .main-layout {
+      gap: var(--spacing-sm);
+    }
+
+    .left-col, .right-col {
+      gap: var(--spacing-sm);
+    }
+
+    .definition-card {
+      padding: var(--spacing-md);
+      gap: var(--spacing-md);
+    }
+
+    .analogy-card {
+      padding: var(--spacing-md);
+    }
+
+    .key-point {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+  }
+
+  /* Short desktop screens: compress vertical spacing so content fits without scroll */
+  @media (max-height: 900px) and (min-width: 769px) {
+    .slide-content {
+      padding: 12px var(--spacing-content);
+      gap: var(--spacing-md);
+    }
+
+    .slide-header {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+    }
+
+    .main-layout {
+      gap: var(--spacing-md);
+    }
+
+    .left-col,
+    .right-col {
+      gap: var(--spacing-md);
+    }
+
+    .definition-card {
+      padding: var(--spacing-md);
+      gap: var(--spacing-md);
+    }
+
+    .def-icon {
+      font-size: 1.8rem;
+    }
+
+    .def-body h3 {
+      font-size: 1rem;
+    }
+
+    .def-body p {
+      font-size: 0.85rem;
+    }
+
+    .analogy-card {
+      padding: var(--spacing-md);
+    }
+
+    .analogy-card p {
+      font-size: 0.82rem;
+    }
+
+    .code-header {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .code-content {
+      padding: var(--spacing-md);
+      font-size: 0.72rem;
+    }
+
+    .key-point {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .kp-text {
+      font-size: 0.8rem;
+    }
+  }
 </style>

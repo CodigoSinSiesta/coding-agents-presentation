@@ -499,4 +499,76 @@
       font-size: 0.7rem;
     }
   }
+
+  /* Short desktop screens: compress vertical spacing so content fits without scroll */
+  @media (max-height: 900px) and (min-width: 769px) {
+    .slide-content {
+      padding: 12px var(--spacing-content);
+      gap: var(--spacing-md);
+    }
+
+    .slide-header {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+
+    .main-layout {
+      gap: var(--spacing-md);
+    }
+
+    .loop-diagram {
+      padding: var(--spacing-md);
+    }
+
+    .loop-title {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .loop-steps {
+      gap: var(--spacing-xs);
+    }
+
+    .step {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+    }
+
+    .step-arrow {
+      font-size: 1rem;
+    }
+
+    .loop-back {
+      font-size: 0.68rem;
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .concepts {
+      gap: var(--spacing-sm);
+    }
+
+    .concept-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-md);
+    }
+
+    .concept-icon {
+      font-size: 1.6rem;
+    }
+
+    .concept-body h4 {
+      font-size: 1rem;
+    }
+
+    .concept-body p {
+      font-size: 0.82rem;
+    }
+  }
 </style>

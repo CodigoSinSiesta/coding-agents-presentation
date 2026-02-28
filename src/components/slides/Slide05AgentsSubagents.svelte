@@ -718,4 +718,90 @@
       font-size: 0.7rem;
     }
   }
+
+  /* Short desktop screens: compress vertical spacing so content fits without scroll */
+  @media (max-height: 900px) and (min-width: 769px) {
+    .slide-content {
+      padding: 12px var(--spacing-content);
+      gap: var(--spacing-md);
+    }
+
+    .main-layout {
+      gap: var(--spacing-md);
+    }
+
+    .diagram-section {
+      gap: var(--spacing-xs);
+    }
+
+    .orchestrator {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-md);
+    }
+
+    .orch-icon {
+      font-size: 1.6rem;
+    }
+
+    .orch-label {
+      font-size: 1rem;
+    }
+
+    .arrows-row {
+      padding: 2px 0;
+    }
+
+    .arrow-line {
+      height: 18px;
+    }
+
+    .subagent {
+      padding: var(--spacing-sm);
+    }
+
+    .result-arrow {
+      padding: 2px 0;
+    }
+
+    .result-box {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .right-col {
+      gap: var(--spacing-md);
+    }
+
+    .when-card {
+      padding: var(--spacing-md);
+    }
+
+    .when-card h3 {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .checklist {
+      gap: var(--spacing-sm);
+    }
+
+    .checklist li {
+      font-size: 0.82rem;
+    }
+
+    .example-header {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .ex-code {
+      padding: var(--spacing-md);
+      font-size: 0.72rem;
+    }
+
+    .warning-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .warning-card p {
+      font-size: 0.78rem;
+    }
+  }
 </style>

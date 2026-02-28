@@ -502,3 +502,12 @@ a:hover {
     font-size: 0.85rem;
   }
 }
+
+/* Short viewport: allow slide content to scroll vertically on desktop
+   when content is taller than the screen (e.g. 1440x768 laptops) */
+@media (max-height: 900px) and (min-width: 769px) {
+  .swiper-slide-active {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}

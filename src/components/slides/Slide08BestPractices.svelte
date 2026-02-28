@@ -429,4 +429,57 @@
       font-size: 0.75rem;
     }
   }
+
+  /* Short desktop screens: compress vertical spacing so content fits without scroll */
+  @media (max-height: 900px) and (min-width: 769px) {
+    .slide-content {
+      padding: 12px var(--spacing-content);
+      gap: var(--spacing-md);
+    }
+
+    .slide-header {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+
+    .practices-grid {
+      gap: var(--spacing-md);
+    }
+
+    .practices-col {
+      gap: var(--spacing-sm);
+    }
+
+    .col-header {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .practices-list {
+      gap: var(--spacing-xs);
+    }
+
+    .practice-item {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .item-text {
+      font-size: 0.82rem;
+    }
+
+    .bottom-insight {
+      padding: var(--spacing-md);
+      gap: var(--spacing-md);
+    }
+
+    .insight-icon {
+      font-size: 1.6rem;
+    }
+
+    .bottom-insight p {
+      font-size: 0.9rem;
+    }
+  }
 </style>

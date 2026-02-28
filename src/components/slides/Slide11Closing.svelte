@@ -749,4 +749,51 @@
       font-size: 0.6rem;
     }
   }
+
+  /* Short desktop screens: compress vertical spacing so content fits without scroll */
+  @media (max-height: 900px) and (min-width: 769px) {
+    .slide-content {
+      padding: 12px var(--spacing-content);
+      gap: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+
+    .question {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+    }
+
+    .main-layout {
+      gap: var(--spacing-sm);
+    }
+
+    .takeaways-list {
+      gap: var(--spacing-sm);
+    }
+
+    .takeaway {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-md);
+    }
+
+    .right-col {
+      gap: var(--spacing-sm);
+    }
+
+    .resources {
+      padding: var(--spacing-md);
+    }
+
+    .author-final {
+      padding: var(--spacing-md);
+      gap: var(--spacing-md);
+    }
+
+    .final-quote {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-sm);
+    }
+  }
 </style>

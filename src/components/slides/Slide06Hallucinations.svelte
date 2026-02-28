@@ -608,4 +608,41 @@
       font-size: 0.7rem;
     }
   }
+
+  /* Short desktop screens: compress vertical spacing so content fits without scroll */
+  @media (max-height: 900px) and (min-width: 769px) {
+    .slide-content {
+      padding: 12px var(--spacing-content);
+      gap: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+
+    .main-layout {
+      gap: var(--spacing-sm);
+    }
+
+    .left-col, .right-col {
+      gap: var(--spacing-sm);
+    }
+
+    .def-card, .ana-card {
+      padding: var(--spacing-md);
+    }
+
+    .ex-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+      gap: var(--spacing-xs);
+    }
+
+    .stats-row {
+      gap: var(--spacing-sm);
+    }
+
+    .stat-card {
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+  }
 </style>
