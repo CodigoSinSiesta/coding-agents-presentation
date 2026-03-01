@@ -281,13 +281,21 @@
   }
 
   @media (max-width: 768px) {
-    .title { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+    .title {
+      font-size: clamp(3.5rem, 13vw, 5.5rem);
+      text-align: center;
+      width: 100%;
+    }
     .tools-row { gap: var(--spacing-xs); }
     .author-card { padding: var(--spacing-md) var(--spacing-lg); }
   }
 
   @media (max-width: 480px) {
-    .title { font-size: clamp(2.2rem, 10vw, 3.5rem); }
+    .title {
+      font-size: clamp(3rem, 13vw, 4.5rem);
+      text-align: center;
+      width: 100%;
+    }
     .subtitle { font-size: 1rem; }
     .author-avatar { width: 42px; height: 42px; }
     .tool-badge {
@@ -304,7 +312,9 @@
     }
 
     .title {
-      font-size: clamp(1.8rem, 9vw, 2.8rem);
+      font-size: clamp(2.6rem, 12vw, 3.5rem);
+      text-align: center;
+      width: 100%;
       line-height: 1.1;
     }
 
