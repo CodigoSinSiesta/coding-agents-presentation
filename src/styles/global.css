@@ -487,6 +487,7 @@ a:hover {
 @media (max-width: 480px) {
   body {
     font-size: 0.9rem;
+    overflow: auto; /* Allow vertical scroll on small phones */
   }
 
   h1 {
@@ -509,5 +510,20 @@ a:hover {
   .swiper-slide-active {
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Mobile: allow vertical scroll inside active slide when content overflows */
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+
+  .swiper-slide-active {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    /* Space for top nav elements (hamburger) and bottom counter */
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
