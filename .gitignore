@@ -1,10 +1,12 @@
 # dependencies
 node_modules/
 package-lock.json
+pnpm-lock.yaml
 
 # build output
 dist/
 build/
+.astro/
 
 # development
 .env
@@ -17,9 +19,6 @@ build/
 .idea/
 *.swp
 *.swo
-
-# Astro
-.astro/
 
 # Temp
 *.log
