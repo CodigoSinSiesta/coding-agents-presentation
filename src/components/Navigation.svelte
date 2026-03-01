@@ -321,7 +321,7 @@
     pointer-events: none;
     transition: opacity 0.6s ease-out;
     visibility: hidden;
-    overflow: hidden;
+    overflow: auto;
   }
 
   :global(.swiper-slide::-webkit-scrollbar) {
@@ -347,7 +347,7 @@
     pointer-events: auto;
     position: absolute !important;
     visibility: visible;
-    overflow: hidden;
+    overflow-y: auto !important;
   }
 
   .nav-btn {
@@ -644,6 +644,19 @@
     .slide-drawer {
       display: block;
     }
+
+    /* Allow scroll on mobile: override overflow:hidden from base rules */
+    :global(.swiper-slide) {
+      overflow-y: auto;
+      /* Push content clear of bottom counter (~60px) and top hamburger (~80px) */
+      padding-top: 80px;
+      padding-bottom: 72px;
+    }
+
+    :global(.swiper-slide-active) {
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
   @media (max-width: 480px) {
@@ -659,6 +672,24 @@
       bottom: var(--spacing-md);
       right: var(--spacing-md);
       font-size: 0.9rem;
+    }
+
+    /* Extra breathing room on small phones */
+    :global(.swiper-slide) {
+      padding-top: 88px;
+      padding-bottom: 80px;
+    }
+  }
+
+  /* Desktop: lock scroll to keep full-screen presentation feel */
+  @media (min-width: 769px) {
+    :global(.swiper-slide) {
+      overflow: hidden;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    :global(.swiper-slide-active) {
+      overflow: hidden !important;
     }
   }
 </style>
