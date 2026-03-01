@@ -345,9 +345,6 @@
     .slide-content {
       padding: var(--spacing-lg) var(--spacing-md);
       gap: var(--spacing-lg);
-      overflow-y: auto;
-      max-height: 100vh;
-      -webkit-overflow-scrolling: touch;
     }
 
     .title {
