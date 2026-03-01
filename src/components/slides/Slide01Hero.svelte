@@ -281,12 +281,24 @@
   }
 
   @media (max-width: 768px) {
+    .slide-content {
+      align-items: center;
+    }
+    .eyebrow {
+      justify-content: center;
+    }
     .title {
       font-size: clamp(3.5rem, 13vw, 5.5rem);
       text-align: center;
       width: 100%;
     }
-    .tools-row { gap: var(--spacing-xs); }
+    .subtitle {
+      text-align: center;
+    }
+    .tools-row {
+      justify-content: center;
+      gap: var(--spacing-xs);
+    }
     .author-card { padding: var(--spacing-md) var(--spacing-lg); }
   }
 
