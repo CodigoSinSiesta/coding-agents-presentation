@@ -267,7 +267,7 @@
 
   .wf-step {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
     background: rgba(59, 130, 246, 0.08);
@@ -298,7 +298,6 @@
     font-size: 0.7rem;
     color: var(--color-electric);
     opacity: 0.8;
-    word-break: break-word;
   }
 
   .wf-arrow {
