@@ -11,7 +11,7 @@
   - Revisa SIEMPRE el código generado
   - Itera: el agente mejora con feedback
   - Empieza pequeño, crece gradualmente
-  - Usa .cursorrules / CLAUDE.md
+  - Usa CLAUDE.md / AGENTS.md
 - **DON'Ts** (Nunca hagas):
   - No copies APIs o paquetes sin verificar
   - No confíes ciegamente en lo que el agente dice

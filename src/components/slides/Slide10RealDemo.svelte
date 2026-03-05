@@ -295,12 +295,10 @@
 
   .wf-cmd {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     color: var(--color-electric);
-    opacity: 0.6;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    opacity: 0.8;
+    word-break: break-word;
   }
 
   .wf-arrow {
@@ -469,7 +467,7 @@
     }
 
     .wf-cmd {
-      font-size: 0.6rem;
+      font-size: 0.65rem;
     }
 
     .terminal-header {
@@ -584,7 +582,7 @@
     }
 
     .wf-cmd {
-      font-size: 0.58rem;
+      font-size: 0.62rem;
     }
 
     .terminal-header {
@@ -682,7 +680,7 @@
     }
 
     .wf-cmd {
-      font-size: 0.55rem;
+      font-size: 0.58rem;
     }
 
     .terminal-header {

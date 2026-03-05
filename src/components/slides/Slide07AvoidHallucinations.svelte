@@ -40,13 +40,13 @@
       example: 'Empieza nuevas sesiones para tareas distintas. Mantén el foco.',
       color: '#ec4899',
     },
-    {
-      icon: '📋',
-      title: 'CLAUDE.md / .cursorrules',
-      desc: 'Archivos de contexto permanente del proyecto que el agente lee automáticamente.',
-      example: 'Define arquitectura, convenciones, dependencias y reglas del proyecto.',
-      color: '#60A5FA',
-    },
+     {
+       icon: '📋',
+       title: 'CLAUDE.md / AGENTS.md',
+       desc: 'Archivos de contexto permanente del proyecto que el agente lee automáticamente.',
+       example: 'Define arquitectura, convenciones, dependencias y reglas del proyecto.',
+       color: '#60A5FA',
+     },
   ];
 </script>
 

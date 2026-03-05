@@ -12,14 +12,15 @@
   - **Límite de contexto**: ~200k tokens (peligro de "olvido")
 - **Archivos de contexto por herramienta**:
   - `CLAUDE.md`: Arquitectura, reglas, comandos
-  - `.cursorrules`: Instrucciones de código, frameworks,  - `copilot-instructions.md`: Personalización de Copilot Chat
-- **Pro tip crítico**: Empieza siempre con un CLAUDE.md o .cursorrules básico
+  - `AGENTS.md`: Formato estándar multi-agente, instrucciones de proyecto
+  - `copilot-instructions.md`: Personalización de Copilot Chat
+- **Pro tip crítico**: Empieza siempre con un CLAUDE.md o AGENTS.md básico
 - El agente lee estos archivos en CADA conversación
 - **Problema del contexto largo**: Más caro, más probabilidad de que el modelo "olvide" información temprana
 
 ## Datos relevantes
 - Claude Code lee CLAUDE.md automáticamente al inicio
-- Cursor lee .cursorrules en cada request
+- Varios agentes soportan AGENTS.md como formato estándar
 - El límite de 200k tokens es real, no teórico
 - El contexto se degrada con conversaciones largas
 

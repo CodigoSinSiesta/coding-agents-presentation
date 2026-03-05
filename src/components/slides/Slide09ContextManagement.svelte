@@ -12,10 +12,10 @@
       content: 'Arquitectura del proyecto, reglas de estilo, comandos de build y test, contexto del dominio.',
     },
     {
-      file: '.cursorrules',
-      tool: 'Cursor',
-      color: '#0ea5e9',
-      content: 'Instrucciones de código, frameworks a usar, patrones prohibidos, convenciones del equipo.',
+      file: 'AGENTS.md',
+      tool: 'Genérico / Multi-agente',
+      color: '#10b981',
+      content: 'Instrucciones de proyecto. Formato estándar compatible con múltiples agentes de IA.',
     },
     {
       file: 'copilot-instructions.md',
@@ -93,7 +93,7 @@
           <span class="pro-icon">⚡</span>
           <div class="pro-body">
             <span class="pro-title">Pro tip</span>
-            <p>Empieza siempre con un <code>CLAUDE.md</code> o <code>.cursorrules</code> básico. Documenta ahí la arquitectura, los patrones que usas y los que NUNCA debes usar. El agente lo leerá en cada conversación.</p>
+            <p>Empieza siempre con un <code>CLAUDE.md</code> o <code>AGENTS.md</code> básico. Documenta ahí la arquitectura, los patrones que usas y los que NUNCA debes usar. El agente lo leerá en cada conversación.</p>
           </div>
         </div>
       </div>

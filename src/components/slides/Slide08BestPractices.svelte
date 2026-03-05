@@ -9,7 +9,7 @@
     { text: 'Dale contexto de arquitectura. El agente no adivina tu estilo' },
     { text: 'Revisa SIEMPRE el código generado. Tú eres el responsable' },
     { text: 'Haz preguntas de alto nivel, deja los detalles al agente' },
-    { text: 'Usa .cursorrules / CLAUDE.md para codificar las reglas del proyecto' },
+     { text: 'Usa CLAUDE.md / AGENTS.md para codificar las reglas del proyecto' },
     { text: 'Itera en conversaciones cortas y enfocadas' },
   ];
 

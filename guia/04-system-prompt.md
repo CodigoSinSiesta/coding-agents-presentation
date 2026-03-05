@@ -13,7 +13,7 @@
   - **Formato**: Cómo debe estructurar sus respuestas
 - El System Prompt se configura en archivos específicos:
   - `CLAUDE.md` para Claude Code
-  - `.cursorrules` para Cursor
+  - `AGENTS.md` como formato genérico multi-agente
   - `COPILOT_INSTRUCTIONS.md` para GitHub Copilot
 - Sin un buen System Prompt, el agente:
   - No conoce tu arquitectura
@@ -24,7 +24,7 @@
 ## Datos relevantes
 - Un System Prompt puede ser desde 500 hasta 5000+ tokens
 - Claude Code lee CLAUDE.md en CADA interacción
-- Cursor lee .cursorrules en cada request
+- Varios agentes soportan AGENTS.md como formato estándar
 - El System Prompt consume contexto pero mejora drásticamente la calidad
 
 ## Transición
