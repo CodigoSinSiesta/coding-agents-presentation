@@ -267,7 +267,7 @@
 
   .wf-step {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
     background: rgba(59, 130, 246, 0.08);
