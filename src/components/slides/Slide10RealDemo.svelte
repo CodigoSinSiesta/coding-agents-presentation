@@ -261,15 +261,15 @@
   .wf-steps {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
+    gap: 4px;
+    flex-wrap: nowrap;
   }
 
   .wf-step {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-md);
+    gap: 4px;
+    padding: 4px 6px;
     background: rgba(59, 130, 246, 0.08);
     border: 1px solid rgba(96, 165, 250, 0.15);
     border-radius: var(--radius-sm);
@@ -277,7 +277,7 @@
     min-width: 0;
   }
 
-  .wf-icon { font-size: 1.2rem; flex-shrink: 0; }
+  .wf-icon { font-size: 0.9rem; flex-shrink: 0; }
 
   .wf-body {
     display: flex;
@@ -288,16 +288,18 @@
 
   .wf-label {
     font-family: var(--font-display);
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--color-neutral-light);
+    white-space: nowrap;
   }
 
   .wf-cmd {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: var(--color-electric);
     opacity: 0.8;
+    line-height: 1.3;
   }
 
   .wf-arrow {
