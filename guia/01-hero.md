@@ -7,7 +7,7 @@
 - Bienvenida a la charla sobre Agentes de IA para Coding
 - Tema principal: Cómo usar agentes de IA en tu día a día como desarrollador
 - Presentación del ponente: Alejandro de la Fuente
-- Cargo: Technical Leader · NTT Data · GDE
+- Cargo: Technical Leader · NTT Data · GDNE
 - Enlaces: tellmealex.dev, GitHub, LinkedIn
 - Estructura de la charla: panorama de herramientas → cómo funcionan → buenas prácticas
 - Contexto: los agentes de coding son tu nuevo compañero de código, no tu reemplazo
