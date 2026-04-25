@@ -1,5 +1,7 @@
 # Agentes vs Subagentes
 
+> **Pie del slide (abril 2026)**: la taxonomía canónica de IBM cita 7 roles que cualquier agente complejo termina necesitando: **doer · planner · tool operator · learner · critic · supervisor · presenter**. Sirve de checklist: si tu agente entrega outputs incoherentes te falta `critic`; si pierde el hilo te falta `supervisor`; si fabrica datos te falta `learner`.
+
 ## Tiempo estimado
 3 minutos
 
