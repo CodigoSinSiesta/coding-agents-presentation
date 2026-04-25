@@ -4,7 +4,7 @@
   import { animateSlideEntrance, addButtonHoverAnimation } from '../utils/animations';
 
   let currentSlide = 0;
-  let totalSlides = 11;
+  let totalSlides = 13;
   let slides = [];
   let menuOpen = false;
 
@@ -25,8 +25,10 @@
     'hallucinations',
     'avoid-hallucinations',
     'best-practices',
+    'twelve-factor',
     'context-management',
     'real-demo',
+    'harness-engineering',
     'closing'
   ];
 
@@ -39,8 +41,10 @@
     'hallucinations': 'Alucinaciones',
     'avoid-hallucinations': 'Evitar Alucinaciones',
     'best-practices': 'Buenas Prácticas',
+    'twelve-factor': '12-Factor Agents',
     'context-management': 'Gestión de Contexto',
     'real-demo': 'Demo Real',
+    'harness-engineering': 'Harness Engineering',
     'closing': 'Cierre'
   };
 

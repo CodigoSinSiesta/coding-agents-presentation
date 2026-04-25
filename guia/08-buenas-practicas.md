@@ -12,12 +12,14 @@
   - Itera: el agente mejora con feedback
   - Empieza pequeño, crece gradualmente
   - Usa CLAUDE.md / AGENTS.md
+  - **Lee el código del PR, no solo el plan** (Horthy 2026: 1.000 líneas de plan ≈ 1.000 líneas de código; no hay ahorro real)
 - **DON'Ts** (Nunca hagas):
   - No copies APIs o paquetes sin verificar
   - No confíes ciegamente en lo que el agente dice
   - No dejes que tareas enormes en un solo prompt
   - No uses el agente como sustituto de entender el problema
   - No olvides que el agente no sabe lo que no le dices
+  - **No apruebes planes a ciegas**: aprobar = delegar 100% al agente, incluso las malas decisiones
 
 ## Datos relevantes
 - El agente es JARVIS, tú eres Tony Stark

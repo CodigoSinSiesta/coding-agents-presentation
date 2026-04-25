@@ -9,8 +9,9 @@
     { text: 'Dale contexto de arquitectura. El agente no adivina tu estilo' },
     { text: 'Revisa SIEMPRE el código generado. Tú eres el responsable' },
     { text: 'Haz preguntas de alto nivel, deja los detalles al agente' },
-     { text: 'Usa CLAUDE.md / AGENTS.md para codificar las reglas del proyecto' },
+    { text: 'Usa CLAUDE.md / AGENTS.md para codificar las reglas del proyecto' },
     { text: 'Itera en conversaciones cortas y enfocadas' },
+    { text: 'Lee el código del PR, no solo el plan: 1.000 líneas de plan ≈ 1.000 líneas de código' },
   ];
 
   const donts = [
@@ -20,6 +21,7 @@
     { text: 'No copies APIs o paquetes que el agente "inventa"' },
     { text: 'No uses el agente como sustituto de entender el problema' },
     { text: 'No dejes sesiones largas sin resetear el contexto' },
+    { text: 'No apruebes planes a ciegas: aprobar = delegar 100% al agente' },
   ];
 </script>
 

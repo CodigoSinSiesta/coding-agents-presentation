@@ -12,6 +12,8 @@
     'Contexto es poder. Dale al agente lo que necesita.',
     'Revisa siempre. El código no es tuyo hasta que lo entiendes.',
     'Las alucinaciones se previenen, no se aceptan.',
+    'Los buenos agentes son sobre todo software bien escrito.',
+    'Harness engineering: estructura el repo como prompt persistente.',
   ];
 </script>
 

@@ -100,6 +100,19 @@
         </div>
       </div>
     </div>
+
+    <div class="roles-footer">
+      <span class="roles-label">Patrón canónico (IBM, abril 2026)</span>
+      <div class="roles-list">
+        <span class="role-item">🛠️ doer</span>
+        <span class="role-item">🎯 planner</span>
+        <span class="role-item">🔌 tool operator</span>
+        <span class="role-item">📚 learner</span>
+        <span class="role-item">🔍 critic</span>
+        <span class="role-item">👁️ supervisor</span>
+        <span class="role-item">🎤 presenter</span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -391,6 +404,45 @@
     color: var(--color-electric);
     opacity: 0.6;
     font-style: italic;
+  }
+
+  /* Roles footer */
+  .roles-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px dashed rgba(96, 165, 250, 0.2);
+    border-radius: var(--radius-sm);
+    flex-wrap: wrap;
+  }
+
+  .roles-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-electric);
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+  .roles-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    flex: 1;
+  }
+
+  .role-item {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--color-neutral-light);
+    opacity: 0.78;
+    background: rgba(30, 58, 138, 0.18);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
   }
 
   /* Warning */
