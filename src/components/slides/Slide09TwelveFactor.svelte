@@ -82,7 +82,7 @@
     padding: var(--spacing-2xl) var(--spacing-content);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xl);
   }
 
   .slide-header { text-align: center; }
@@ -125,16 +125,16 @@
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-xl);
   }
 
-  .thesis-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+  .thesis-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
 
   .thesis p {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--color-neutral-light);
-    opacity: 0.82;
-    line-height: 1.6;
+    opacity: 0.85;
+    line-height: 1.65;
     margin-bottom: 0;
   }
 
@@ -144,45 +144,47 @@
   .factors-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-sm);
+    grid-template-rows: repeat(3, 1fr);
+    gap: var(--spacing-md);
   }
 
   .factor {
     display: flex;
     align-items: flex-start;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-md);
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    min-height: 88px;
   }
 
   .factor-num {
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     font-weight: 800;
     color: var(--color-accent-bright);
-    opacity: 0.7;
+    opacity: 0.75;
     flex-shrink: 0;
-    margin-top: 1px;
+    margin-top: 2px;
   }
 
   .factor-body {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
   }
 
   .factor-title {
     font-family: var(--font-display);
-    font-size: 0.82rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-neutral-light);
     line-height: 1.2;
   }
 
   .factor-desc {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     color: var(--color-neutral-light);
-    opacity: 0.6;
-    line-height: 1.4;
+    opacity: 0.7;
+    line-height: 1.5;
   }
 
   /* Key insight */
@@ -190,19 +192,19 @@
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-xl);
     background: rgba(59, 130, 246, 0.08);
     border: 1px solid rgba(96, 165, 250, 0.2);
     border-radius: var(--radius-sm);
   }
 
-  .insight-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .insight-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
 
   .key-insight p {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--color-neutral-light);
-    opacity: 0.8;
-    line-height: 1.6;
+    opacity: 0.85;
+    line-height: 1.65;
     margin-bottom: 0;
     font-style: italic;
   }
