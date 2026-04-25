@@ -124,7 +124,7 @@
     padding: var(--spacing-2xl) var(--spacing-content);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xl);
   }
 
   .slide-header { text-align: center; }
@@ -165,7 +165,7 @@
   /* Quote */
   .quote-block {
     position: relative;
-    padding: var(--spacing-md) var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-2xl);
     background: rgba(167, 139, 250, 0.06);
     border-left: 3px solid #a78bfa;
     border-radius: var(--radius-sm);
@@ -183,11 +183,11 @@
   }
 
   .quote-block p {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: var(--color-neutral-light);
-    opacity: 0.88;
-    line-height: 1.55;
-    margin-bottom: var(--spacing-xs);
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
     font-style: italic;
   }
 
@@ -230,46 +230,46 @@
   .pillar {
     display: flex;
     gap: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-lg);
     align-items: flex-start;
   }
 
-  .pillar-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+  .pillar-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 1px; }
 
   .pillar-body {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
   }
 
   .pillar-title {
     font-family: var(--font-display);
-    font-size: 0.92rem;
+    font-size: 1rem;
     font-weight: 800;
     color: var(--color-neutral-light);
   }
 
   .pillar-desc {
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     color: var(--color-neutral-light);
-    opacity: 0.7;
-    line-height: 1.5;
+    opacity: 0.75;
+    line-height: 1.6;
   }
 
   /* Practice */
   .practice {
     display: flex;
     gap: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-lg);
     align-items: flex-start;
   }
 
   .practice-num {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: 0.92rem;
     font-weight: 800;
     color: #a78bfa;
-    opacity: 0.7;
+    opacity: 0.75;
     flex-shrink: 0;
     margin-top: 2px;
   }
@@ -277,21 +277,21 @@
   .practice-body {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
   }
 
   .practice-title {
     font-family: var(--font-display);
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-neutral-light);
   }
 
   .practice-desc {
-    font-size: 0.76rem;
+    font-size: 0.82rem;
     color: var(--color-neutral-light);
-    opacity: 0.7;
-    line-height: 1.5;
+    opacity: 0.75;
+    line-height: 1.6;
   }
 
   /* Convergence note */
@@ -323,19 +323,19 @@
     display: flex;
     align-items: flex-start;
     gap: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-xl);
     background: rgba(59, 130, 246, 0.08);
     border: 1px solid rgba(96, 165, 250, 0.2);
     border-radius: var(--radius-sm);
   }
 
-  .insight-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .insight-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
 
   .bottom-insight p {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--color-neutral-light);
-    opacity: 0.85;
-    line-height: 1.6;
+    opacity: 0.9;
+    line-height: 1.65;
     margin-bottom: 0;
     font-style: italic;
   }
