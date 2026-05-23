@@ -1,0 +1,43 @@
+src/components/slides/Slide04SystemPrompt.svelte
+  s_0851cae21a93e5::t_cd7785dead351c 2,5-28
+src/components/slides/Slide01Hero.svelte
+  s_0851cae21a93e5::t_9c68cb78643457 2,5-22
+src/components/slides/Slide10ContextManagement.svelte
+  s_0851cae21a93e5::t_959812d48a530d 2-3,5-10,12-13,16-17,20-21,23-25,27-28
+src/components/slides/Slide08BestPractices.svelte
+  s_0851cae21a93e5::t_95b77c794fd5b1 2,5-35
+src/components/slides/Slide12HarnessEngineering.svelte
+  s_0851cae21a93e5::t_7ca79fe5375030 2-3,5-10,13,16-17,21,24-25,27-28
+src/components/slides/Slide13Closing.svelte
+  s_0851cae21a93e5::t_8a7359f211e585 2,5-33
+src/components/slides/Slide05AgentsSubagents.svelte
+  s_0851cae21a93e5::t_73f8e1dcaf29c3 2,5-28
+src/components/slides/Slide02Landscape.svelte
+  s_0851cae21a93e5::t_9a7ec22b943d51 2-3,5-11,14-18,22-26,29-35,38-43,46-51,54-59,61-62
+src/components/slides/Slide11RealDemo.svelte
+  s_0851cae21a93e5::t_b5bd4c710d333f 2,5-32
+src/components/slides/Slide09TwelveFactor.svelte
+  s_0851cae21a93e5::t_00603aaaf095c7 2,5-25
+src/components/slides/Slide03HowTheyWork.svelte
+  s_0851cae21a93e5::t_5b2061126385d9 2,5-26
+src/components/slides/Slide07AvoidHallucinations.svelte
+  s_0851cae21a93e5::t_ad7a72dd473540 2-3,5-10,13,17,20-21,24-28
+src/components/slides/Slide06Hallucinations.svelte
+  s_0851cae21a93e5::t_92e2ed8447172c 2-3,5-10,13,17,20-21,23-25,27-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "dd83c4de3ea6830b82590cebd51b9d4a3d3e7860",
+  "prompts": {},
+  "sessions": {
+    "s_0851cae21a93e5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8adf6cab-2a03-46e5-8509-a8c3aad9a219",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Alejandro de la Fuente de la Rosa <alejandro.delafuentedelarosa@emeal.nttdata.com>"
+    }
+  }
+}
