@@ -3,33 +3,38 @@
 </script>
 
 <SlideCompare
-  eyebrow="Buenas prácticas"
-  title="Cómo trabajar con agentes"
-  titleHighlight="trabajar"
+  eyebrow="Craftmanship"
+  title="Buenas prácticas"
+  titleHighlight="prácticas"
+  subtitle="El agente es tan bueno como el desarrollador que lo dirige."
   leftKind="err"
   rightKind="ok"
   left={{
-    label: 'No hagas esto',
-    headline: 'Recetas para el desastre',
+    label: 'Evita esto',
     items: [
-      'Confiar ciegamente en código sin tests',
-      'Dar tareas enormes en un solo prompt',
-      'Pedir decisiones de arquitectura sin contexto',
-      'Ignorar el código generado sin leerlo',
-      'Usar el agente como oráculo de hechos',
-      'No versionar el CLAUDE.md / AGENTS.md'
+      'No confíes ciegamente en código sin tests',
+      'No des tareas enormes en un solo prompt',
+      'No le pidas que tome decisiones de arquitectura sin contexto',
+      'No copies APIs o paquetes que el agente "inventa"',
+      'No uses el agente como sustituto de entender el problema',
+      'No dejes sesiones largas sin resetear el contexto',
+      'No apruebes planes a ciegas: aprobar = delegar 100% al agente'
     ]
   }}
   right={{
-    label: 'Haz esto',
-    headline: 'El flujo que funciona',
+    label: 'Hazlo',
     items: [
-      'Revisa SIEMPRE el código — tú eres el responsable',
-      'Dale contexto de arquitectura antes de pedir código',
-      'Usa CLAUDE.md para codificar las reglas del proyecto',
-      'Tareas pequeñas y focalizadas, itera en conversaciones cortas',
-      'Lee el código del PR, no solo el plan',
-      'Usa el agente para boilerplate, tests y documentación'
+      'Usa el agente para tareas repetitivas: boilerplate, tests, documentación',
+      'Dale contexto de arquitectura. El agente no adivina tu estilo',
+      'Revisa SIEMPRE el código generado. Tú eres el responsable',
+      'Haz preguntas de alto nivel, deja los detalles al agente',
+      'Usa `CLAUDE.md` / `AGENTS.md` para codificar las reglas del proyecto',
+      'Itera en conversaciones cortas y enfocadas',
+      'Lee el código del PR, no solo el plan: **1.000 líneas de plan ≈ 1.000 líneas de código**'
     ]
+  }}
+  insight={{
+    icon: '🤖',
+    body: 'El agente es **Jarvis**. Tú eres **Tony Stark**. Jarvis no construye el traje solo. Tú diriges, él ejecuta. Invierte el rol y el resultado será una catástrofe.'
   }}
 />
